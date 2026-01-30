@@ -1,0 +1,27 @@
+/* ============================
+   Global Design Tokens
+   ============================ */
+
+/* Colors */
+$color-primary: #7009d1;
+$color-primary-hover: #5d02b3;
+$color-primary-text: #ffffff;
+
+$color-secondary-bg: #F3E8FD;
+$color-secondary-hover: #f7f5f9;
+$color-secondary-text: #4A008F;
+
+$btn-disabled-bg: #e5e7eb;
+$btn-disabled-text: #9ca3af;
+$btn-disabled-border: #d1d5db;
+
+/* Base Text */
+$font-weight-semibold: 600;
+
+/* Spacing */
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1rem;
+
+/* Misc */
+$btn-cursor: pointer;
+$btn-border-radius: 4px; // optional if you want rounded buttons

@@ -1,7 +1,13 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'ui-foundation',
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/global/_tokens.scss']
+    })
+  ],
   outputTargets: [
     {
       type: 'dist',

@@ -22,7 +22,14 @@ export namespace Components {
     }
     interface PnButton {
         "label": string;
-        "type": string;
+        /**
+          * @default false
+         */
+        "rounded": boolean;
+        /**
+          * @default 'primary'
+         */
+        "type": 'primary' | 'secondary' | 'disabled';
     }
 }
 declare global {
@@ -60,7 +67,14 @@ declare namespace LocalJSX {
     }
     interface PnButton {
         "label"?: string;
-        "type"?: string;
+        /**
+          * @default false
+         */
+        "rounded"?: boolean;
+        /**
+          * @default 'primary'
+         */
+        "type"?: 'primary' | 'secondary' | 'disabled';
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
