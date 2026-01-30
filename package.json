@@ -13,7 +13,7 @@
       "import": "./dist/ui-foundation/ui-foundation.esm.js",
       "require": "./dist/ui-foundation/ui-foundation.cjs.js"
     },
-    "./components/*": {
+    "./dist/components/*": {
       "import": "./dist/components/*",
       "types": "./dist/components/*"
     },
