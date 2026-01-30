@@ -1,5 +1,5 @@
 {
-  "name": "ui-foundation",
+  "name": "@parthi033/ui-foundation",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -13,9 +13,9 @@
       "import": "./dist/ui-foundation/ui-foundation.esm.js",
       "require": "./dist/ui-foundation/ui-foundation.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
+    "./components/*": {
+      "import": "./dist/components/*",
+      "types": "./dist/components/*"
     },
     "./loader": {
       "import": "./loader/index.js",
@@ -31,6 +31,9 @@
     "dist/",
     "loader/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",

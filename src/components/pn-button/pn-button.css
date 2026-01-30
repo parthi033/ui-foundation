@@ -1,0 +1,23 @@
+.btn{
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    background: transparent;
+    border: 0 none;
+    color:rgb(112, 9, 209);
+    cursor: pointer;
+}
+.btn.primary{
+    background-color: #7009d1;
+    color: #FFF;
+}
+.btn.primary:hover,
+.btn.primary:focus,
+.btn.primary:active{
+    background-color: #5d02b3;
+    color: #FFF;
+}
+.btn.secondary{
+    border-color: #7009d1;
+    background-color: #dec2f7;
+    color: #7009d1;
+}
