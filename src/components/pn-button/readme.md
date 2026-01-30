@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                       | Default     |
-| -------- | --------- | ----------- | -------------------------- | ----------- |
-| `label`  | `label`   |             | `string`                   | `undefined` |
-| `type`   | `type`    |             | `"primary" \| "secondary"` | `'primary'` |
+| Property  | Attribute | Description | Type                                     | Default     |
+| --------- | --------- | ----------- | ---------------------------------------- | ----------- |
+| `label`   | `label`   |             | `string`                                 | `undefined` |
+| `rounded` | `rounded` |             | `boolean`                                | `false`     |
+| `type`    | `type`    |             | `"disabled" \| "primary" \| "secondary"` | `'primary'` |
 
 
 ----------------------------------------------
