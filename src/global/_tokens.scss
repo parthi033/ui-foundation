@@ -2,26 +2,65 @@
    Global Design Tokens
    ============================ */
 
-/* Colors */
-$color-primary: #7009d1;
-$color-primary-hover: #5d02b3;
-$color-primary-text: #ffffff;
+:root {
+   /* Primary */
 
-$color-secondary-bg: #F3E8FD;
-$color-secondary-hover: #f7f5f9;
-$color-secondary-text: #4A008F;
+   --color-primary: #7009d1;
+   --color-primary-hover: #5d02b3;
+   --color-primary-text: #ffffff;
 
-$btn-disabled-bg: #e5e7eb;
-$btn-disabled-text: #9ca3af;
-$btn-disabled-border: #d1d5db;
+  /* Secondary */
+   --color-secondary-bg: #F3E8FD;
+   --color-secondary-hover: #f7f5f9;
+   --color-secondary-text: #4A008F;
 
-/* Base Text */
-$font-weight-semibold: 600;
+  /* Disabled */
+   --btn-disabled-bg: #e5e7eb;
+   --btn-disabled-text: #9ca3af;
+   --btn-disabled-border: #d1d5db;
 
-/* Spacing */
-$btn-padding-y: 0.5rem;
-$btn-padding-x: 1rem;
+}
+/* Dark Theme */
+:root.dark {
+   /* Primary */
+  --color-primary: #2d016e;
+  --color-primary-hover: #2d0174;
+  --color-primary-text: #ffffff;
 
-/* Misc */
-$btn-cursor: pointer;
-$btn-border-radius: 4px; // optional if you want rounded buttons
+  /* Secondary */
+  --color-secondary-bg: #362f3e;
+  --color-secondary-hover: #4d435d;
+  --color-secondary-text: #ffffff;
+
+  /* Disabled */
+  --btn-disabled-bg: #bcbbbb;
+  --btn-disabled-text: #6f6e6e;
+  --btn-disabled-border: #555555;
+}
+
+/* General variables */
+
+   $color-primary: var(--color-primary);
+   $color-primary-hover: var(--color-primary-hover);
+   $color-primary-text: var(--color-primary-text);
+
+  /* Secondary */
+   $color-secondary-bg: var(--color-secondary-bg);
+   $color-secondary-hover: var(--color-secondary-hover);
+   $color-secondary-text: var(--color-secondary-text);
+
+  /* Disabled */
+   $btn-disabled-bg: var(--btn-disabled-bg);
+   $btn-disabled-text: var(--btn-disabled-text);
+   $btn-disabled-border: var(--btn-disabled-border);
+
+   /* Base Text */
+   $font-weight-semibold: 600;
+
+   /* Spacing */
+   $btn-padding-y: 0.5rem;
+   $btn-padding-x: 1rem;
+
+   /* Misc */
+   $btn-cursor: pointer;
+   $btn-border-radius: 4px; // optional if you want rounded buttons
