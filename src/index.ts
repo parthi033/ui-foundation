@@ -8,5 +8,9 @@
  * to consume components of this package as outlined in the `README.md`.
  */
 
+export { Components, JSX } from './components';
+
+// Export component utilities and types
+export type { EventEmitter } from '@stencil/core';
 export { format } from './utils/utils';
 export type * from './components.d.ts';

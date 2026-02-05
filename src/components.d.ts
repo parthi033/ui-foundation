@@ -41,6 +41,55 @@ export namespace Components {
          */
         "type": 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent';
     }
+    interface PnInput {
+        "autocomplete"?: string;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        /**
+          * @default ''
+         */
+        "errorMessage"?: string;
+        "iconLeft"?: string;
+        "iconRight"?: string;
+        "inputId"?: string;
+        "label": string;
+        "max"?: number;
+        "maxlength"?: number;
+        "min"?: number;
+        "minlength"?: number;
+        "name"?: string;
+        /**
+          * @default ''
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        "step"?: number;
+        /**
+          * @default 'text'
+         */
+        "type"?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
+        /**
+          * @default ''
+         */
+        "value"?: string | number;
+    }
+}
+export interface PnInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnInputElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -55,9 +104,30 @@ declare global {
         prototype: HTMLPnButtonElement;
         new (): HTMLPnButtonElement;
     };
+    interface HTMLPnInputElementEventMap {
+        "pnInput": { value: string | number; name?: string };
+        "pnFocus": FocusEvent;
+        "pnBlur": FocusEvent;
+        "pnChange": { value: string | number; name?: string };
+    }
+    interface HTMLPnInputElement extends Components.PnInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnInputElementEventMap>(type: K, listener: (this: HTMLPnInputElement, ev: PnInputCustomEvent<HTMLPnInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnInputElementEventMap>(type: K, listener: (this: HTMLPnInputElement, ev: PnInputCustomEvent<HTMLPnInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnInputElement: {
+        prototype: HTMLPnInputElement;
+        new (): HTMLPnInputElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "pn-button": HTMLPnButtonElement;
+        "pn-input": HTMLPnInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -96,9 +166,59 @@ declare namespace LocalJSX {
          */
         "type"?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent';
     }
+    interface PnInput {
+        "autocomplete"?: string;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        /**
+          * @default ''
+         */
+        "errorMessage"?: string;
+        "iconLeft"?: string;
+        "iconRight"?: string;
+        "inputId"?: string;
+        "label"?: string;
+        "max"?: number;
+        "maxlength"?: number;
+        "min"?: number;
+        "minlength"?: number;
+        "name"?: string;
+        "onPnBlur"?: (event: PnInputCustomEvent<FocusEvent>) => void;
+        "onPnChange"?: (event: PnInputCustomEvent<{ value: string | number; name?: string }>) => void;
+        "onPnFocus"?: (event: PnInputCustomEvent<FocusEvent>) => void;
+        "onPnInput"?: (event: PnInputCustomEvent<{ value: string | number; name?: string }>) => void;
+        /**
+          * @default ''
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        "step"?: number;
+        /**
+          * @default 'text'
+         */
+        "type"?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';
+        /**
+          * @default ''
+         */
+        "value"?: string | number;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "pn-button": PnButton;
+        "pn-input": PnInput;
     }
 }
 export { LocalJSX as JSX };
@@ -107,6 +227,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "pn-button": LocalJSX.PnButton & JSXBase.HTMLAttributes<HTMLPnButtonElement>;
+            "pn-input": LocalJSX.PnInput & JSXBase.HTMLAttributes<HTMLPnInputElement>;
         }
     }
 }

@@ -99,6 +99,70 @@
       </div>
     </div>
 
+    <!-- Input Components Demo Section -->
+    <div class="section">
+      <h3>Input Components</h3>
+      
+      <div style="display: grid; gap: 2rem; margin: 1rem 0;">
+        <div>
+          <h4>Basic Text Inputs</h4>
+          <div style="display: grid; gap: 1rem; max-width: 400px;">
+            <pn-input label="Full Name" placeholder="Enter your full name" required="true"></pn-input>
+            <pn-input label="Description" placeholder="Optional description"></pn-input>
+          </div>
+        </div>
+
+        <div>
+          <h4>Input Types</h4>
+          <div style="display: grid; gap: 1rem; max-width: 400px;">
+            <pn-input label="Email Address" type="email" placeholder="you@example.com" icon-left="fas fa-envelope" required="true"></pn-input>
+            <pn-input label="Password" type="password" placeholder="Enter password" icon-left="fas fa-lock" required="true"></pn-input>
+            <pn-input label="Phone Number" type="tel" placeholder="+1 (555) 000-0000" icon-left="fas fa-phone"></pn-input>
+            <pn-input label="Age" type="number" placeholder="25" min="18" max="120" icon-left="fas fa-user"></pn-input>
+            <pn-input label="Website URL" type="url" placeholder="https://example.com" icon-left="fas fa-globe"></pn-input>
+          </div>
+        </div>
+
+        <div>
+          <h4>Search Inputs</h4>
+          <div style="display: grid; gap: 1rem; max-width: 400px;">
+            <pn-input label="Search Products" type="search" placeholder="Search..." icon-right="fas fa-search"></pn-input>
+            <pn-input label="Find User" type="search" placeholder="Enter username" icon-left="fas fa-user" icon-right="fas fa-search"></pn-input>
+          </div>
+        </div>
+
+        <div>
+          <h4>Input States</h4>
+          <div style="display: grid; gap: 1rem; max-width: 400px;">
+            <pn-input label="Valid Email" type="email" value="user@example.com" icon-left="fas fa-envelope"></pn-input>
+            <pn-input label="Invalid Email" type="email" value="invalid-email" error="true" error-message="Please enter a valid email address" icon-left="fas fa-envelope"></pn-input>
+            <pn-input label="Read-only Field" value="This cannot be changed" readonly="true" icon-left="fas fa-lock"></pn-input>
+            <pn-input label="Disabled Field" placeholder="This field is disabled" disabled="true" icon-left="fas fa-ban"></pn-input>
+          </div>
+        </div>
+
+        <div>
+          <h4>Icon Variations</h4>
+          <div style="display: grid; gap: 1rem; max-width: 400px;">
+            <pn-input label="Username" placeholder="Enter username" icon-left="fas fa-user"></pn-input>
+            <pn-input label="Search Query" placeholder="Type to search..." icon-right="fas fa-search"></pn-input>
+            <pn-input label="Amount" type="number" placeholder="0.00" icon-left="fas fa-dollar-sign" icon-right="fas fa-calculator"></pn-input>
+          </div>
+        </div>
+
+        <div>
+          <h4>Form Validation Example</h4>
+          <div style="display: grid; gap: 1rem; max-width: 400px;">
+            <pn-input label="First Name" placeholder="John" required="true" icon-left="fas fa-user"></pn-input>
+            <pn-input label="Last Name" placeholder="Doe" required="true" icon-left="fas fa-user"></pn-input>
+            <pn-input label="Company Email" type="email" placeholder="john.doe@company.com" required="true" icon-left="fas fa-envelope"></pn-input>
+            <pn-input label="Phone" type="tel" placeholder="+1 (555) 123-4567" icon-left="fas fa-phone"></pn-input>
+            <pn-input label="Company Website" type="url" placeholder="https://company.com" icon-left="fas fa-globe"></pn-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section">
       <h3>Icon-Only Buttons</h3>
       <div class="button-group">

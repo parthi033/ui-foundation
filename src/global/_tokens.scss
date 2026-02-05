@@ -37,94 +37,148 @@ $disabled-hex: #5b5b5b !default;
    --color-disabled: hsl(var(--color-disabled-h), var(--color-disabled-s), var(--color-disabled-l));
   
    /* Typography */
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-  --font-size-base: 16px;
-  --font-size-sm: 14px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --line-height-base: 1.5;
-  --line-height-tight: 1.25;
-  --body-font-color: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+   --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+   --font-size-base: 16px;
+   --font-size-sm: 14px;
+   --font-size-lg: 18px;
+   --font-size-xl: 20px;
+   --line-height-base: 1.5;
+   --line-height-tight: 1.25;
+   --body-font-color: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
 
+   /* Box Shadows */
+   --shadow-primary-light: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.1);
+   --shadow-primary-medium: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.15);
+   --shadow-primary-heavy: 0 8px 16px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.2);
+   --shadow-primary-button: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) 20% / 0.3);
+  
+   /* Button Tokens */
+   --btn-transparent-bg: transparent;
+   --btn-transparent-text: var(--color-primary);
+   --btn-transparent-border: var(--color-primary);
+   --btn-transparent-hover-bg: var(--color-primary);
+   --btn-transparent-hover-text: hsl(var(--color-primary-h) var(--color-primary-s) 100%);
 
-  /* Box Shadows */
-  --shadow-primary-light: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.1);
-  --shadow-primary-medium: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.15);
-  --shadow-primary-heavy: 0 8px 16px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.2);
-  --shadow-primary-button: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) 20% / 0.3);
-  
-  /* Transparent Button */
-  --btn-transparent-bg: transparent;
-  --btn-transparent-text: var(--color-primary);
-  --btn-transparent-border: var(--color-primary);
-  --btn-transparent-hover-bg: var(--color-primary);
-  --btn-transparent-hover-text: hsl(var(--color-primary-h) var(--color-primary-s) 100%);
-  
+   /* Input Fields */
+   --input-bg: hsl(var(--color-primary-h), var(--color-primary-s), 98%);
+   --input-border: hsl(var(--color-primary-h), var(--color-primary-s), 85%);
+   --input-border-width: 1px;
+   --input-border-radius: 4px;
+   --input-text: hsl(var(--color-primary-h), var(--color-primary-s), 20%);
+   --input-placeholder: hsl(var(--color-primary-h), var(--color-primary-s), 60%);
+   --input-padding-y: 0.75rem;
+   --input-padding-x: 1rem;
+   --input-focus-border: var(--color-primary);
+   --input-focus-shadow: 0 0 0 3px hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.1);
+   --input-error-border: hsl(var(--color-primary-h), 70%, 50%);
+   --input-error-text: hsl(var(--color-primary-h), 70%, 45%);
+   --input-disabled-bg: hsl(var(--color-primary-h), var(--color-primary-s), 96%);
+   --input-disabled-text: hsl(var(--color-primary-h), var(--color-primary-s), 60%);
+   --input-readonly-bg: hsl(var(--color-primary-h), var(--color-primary-s), 95%);
+   
+   /* Input Icons */
+   --input-icon-color: hsl(var(--color-primary-h), var(--color-primary-s), 60%);
+   --input-icon-size: 1rem;
+   --input-icon-spacing: 0.75rem;
+   
+   /* Input Label */
+   --input-label-color: hsl(var(--color-primary-h), var(--color-primary-s), 25%);
+   --input-label-font-weight: 500;
+   --input-label-margin-bottom: 0.375rem;
+   --input-required-color: hsl(var(--color-primary-h), 70%, 50%);
 }
 
-/* Dark Theme */
-:root.dark {
+/* Dark Theme Overrides */
+:root.dark,
+.dark {
    --color-primary-l: 16%;
    --color-secondary-l: 16%;
    --color-tertiary-l: 16%;
    --color-disabled-l: 16%;
    --body-font-color: hsl(var(--color-primary-h), var(--color-primary-s), 100%);
-}
 
-/* Dark Theme - Transparent Button Override */
-.dark {
+   /* Dark Mode Button Overrides */
    --btn-transparent-text: hsl(var(--color-primary-h), var(--color-primary-s), 95%);
    --btn-transparent-border: hsl(var(--color-primary-h), var(--color-primary-s), 90%);
    --btn-transparent-hover-bg: hsl(var(--color-primary-h), var(--color-primary-s), 95%);
    --btn-transparent-hover-text: hsl(var(--color-primary-h), var(--color-primary-s), 20%);
+
+   /* Dark Mode Input Overrides */
+   --input-bg: hsl(var(--color-primary-h), var(--color-primary-s), 15%);
+   --input-border: hsl(var(--color-primary-h), var(--color-primary-s), 30%);
+   --input-text: hsl(var(--color-primary-h), var(--color-primary-s), 90%);
+   --input-placeholder: hsl(var(--color-primary-h), var(--color-primary-s), 60%);
+   --input-focus-shadow: 0 0 0 3px hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2);
+   --input-disabled-bg: hsl(var(--color-primary-h), var(--color-primary-s), 10%);
+   --input-disabled-text: hsl(var(--color-primary-h), var(--color-primary-s), 50%);
+   --input-readonly-bg: hsl(var(--color-primary-h), var(--color-primary-s), 12%);
+   --input-label-color: hsl(var(--color-primary-h), var(--color-primary-s), 85%);
+   --input-icon-color: hsl(var(--color-primary-h), var(--color-primary-s), 70%);
 }
 
-   /* Typography */
-   $font-family-primary: var(--font-family-primary);
-   $font-family-mono: var(--font-family-mono);
-   $font-size-base: var(--font-size-base);
-   $font-size-sm: var(--font-size-sm);
-   $font-size-lg: var(--font-size-lg);
-   $font-size-xl: var(--font-size-xl);
-   $line-height-base: var(--line-height-base);
-   $line-height-tight: var(--line-height-tight);
-   $body-font-color: var(--body-font-color);
+.dark body {
+   background: #333;
+}
 
-   /* Box Shadows */
-   $shadow-primary-light: var(--shadow-primary-light);
-   $shadow-primary-medium: var(--shadow-primary-medium);
-   $shadow-primary-heavy: var(--shadow-primary-heavy);
-   $shadow-primary-button: var(--shadow-primary-button);
+/* SCSS Variables for Components */
+// Typography
+$font-family-primary: var(--font-family-primary);
+$font-family-mono: var(--font-family-mono);
+$font-size-base: var(--font-size-base);
+$font-size-sm: var(--font-size-sm);
+$font-size-lg: var(--font-size-lg);
+$font-size-xl: var(--font-size-xl);
+$line-height-base: var(--line-height-base);
+$line-height-tight: var(--line-height-tight);
+$body-font-color: var(--body-font-color);
+$font-weight-semibold: 600;
 
-   /* Transparent Button */
-   $btn-transparent-bg: var(--btn-transparent-bg);
-   $btn-transparent-text: var(--btn-transparent-text);
-   $btn-transparent-border: var(--btn-transparent-border);
-   $btn-transparent-hover-bg: var(--btn-transparent-hover-bg);
-   $btn-transparent-hover-text: var(--btn-transparent-hover-text);
+// Box Shadows
+$shadow-primary-light: var(--shadow-primary-light);
+$shadow-primary-medium: var(--shadow-primary-medium);
+$shadow-primary-heavy: var(--shadow-primary-heavy);
+$shadow-primary-button: var(--shadow-primary-button);
 
-   /* Base Text */
-   $font-weight-semibold: 600;
-   
+// Button Variables
+$btn-transparent-bg: var(--btn-transparent-bg);
+$btn-transparent-text: var(--btn-transparent-text);
+$btn-transparent-border: var(--btn-transparent-border);
+$btn-transparent-hover-bg: var(--btn-transparent-hover-bg);
+$btn-transparent-hover-text: var(--btn-transparent-hover-text);
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1rem;
+$btn-cursor: pointer;
+$btn-border-radius: 4px;
 
-   /* Spacing */
-   $btn-padding-y: 0.5rem;
-   $btn-padding-x: 1rem;
+// Input Variables
+$input-bg: var(--input-bg);
+$input-border: var(--input-border);
+$input-border-width: var(--input-border-width);
+$input-border-radius: var(--input-border-radius);
+$input-text: var(--input-text);
+$input-placeholder: var(--input-placeholder);
+$input-padding-y: var(--input-padding-y);
+$input-padding-x: var(--input-padding-x);
+$input-focus-border: var(--input-focus-border);
+$input-focus-shadow: var(--input-focus-shadow);
+$input-error-border: var(--input-error-border);
+$input-error-text: var(--input-error-text);
+$input-disabled-bg: var(--input-disabled-bg);
+$input-disabled-text: var(--input-disabled-text);
+$input-readonly-bg: var(--input-readonly-bg);
+$input-icon-color: var(--input-icon-color);
+$input-icon-size: var(--input-icon-size);
+$input-icon-spacing: var(--input-icon-spacing);
+$input-label-color: var(--input-label-color);
+$input-label-font-weight: var(--input-label-font-weight);
+$input-label-margin-bottom: var(--input-label-margin-bottom);
+$input-required-color: var(--input-required-color);
 
-   /* Misc */
-   $btn-cursor: pointer;
-   $btn-border-radius: 4px; 
-
-   body {
-      font-family: $font-family-primary;
-      font-size: $font-size-base;
-      line-height: $line-height-base;
-      color: $body-font-color;
-   
-   }
-   .dark{
-      body{
-         background: #333;
-      }
-   }
+// Base Styles
+body {
+   font-family: $font-family-primary;
+   font-size: $font-size-base;
+   line-height: $line-height-base;
+   color: $body-font-color;
+}
