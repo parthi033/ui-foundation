@@ -1,43 +1,176 @@
 .btn {
-  padding: $btn-padding-y $btn-padding-x;
-  font-weight: $font-weight-semibold;
-  background: transparent;
-  border: 0;
-  cursor: $btn-cursor;
+    padding: $btn-padding-y $btn-padding-x;
+    font-weight: $font-weight-semibold;
+    background: transparent;
+    border: 0;
+    cursor: $btn-cursor;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 
-  &.primary {
-    background-color: $color-primary;
-    color: $color-primary-text;
-    border: 1px solid $color-primary;
+    // Icon styles
+    .btn-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
 
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $color-primary-hover;
+        svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+        }
     }
-  }
 
-  &.secondary {
-    background-color: $color-secondary-bg;
-    color: $color-secondary-text;
-    border: 1px solid $color-primary;
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $color-secondary-hover;
+    .btn-text {
+        line-height: 1;
     }
-  }
-  &.rounded{
-    border-radius: $btn-border-radius;
-  }
-  &.rounded{
-    border-radius: $btn-border-radius;
-  }
-   &.disabled {
-    background-color: $btn-disabled-bg;
-    color: $btn-disabled-text;
-    border-color: $btn-disabled-border;
-    cursor: not-allowed;
-  }
+
+    // Icon variations
+    &.has-icon-left {
+        .btn-icon-left {
+            margin-right: 0.25rem;
+        }
+    }
+
+    &.has-icon-right {
+        .btn-icon-right {
+            margin-left: 0.25rem;
+        }
+    }
+
+    &.icon-only {
+        padding: $btn-padding-y;
+        width: auto;
+        min-width: calc(#{$btn-padding-y} * 2 + 1.25rem);
+    }
+
+    &.primary {
+        background-color: hsl(from var(--color-primary) h s l);
+        color: hsl(from var(--color-primary) h s 100%);
+        border: 1px solid hsl(from var(--color-primary) h s 10%);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: hsl(from var(--color-primary) h s 25%);
+        }
+    }
+
+    &.reverse {
+        background-color: hsl(from var(--color-primary) h s 98%);
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+
+        &:hover {
+            background-color: hsl(from var(--color-primary) h s 100%);
+        }
+    }
+    &.secondary {
+        background-color: hsl(from var(--color-secondary) h s l);
+        color: hsl(from var(--color-secondary) h s 100%);
+        border: 1px solid hsl(from var(--color-secondary) h s 10%);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: hsl(from var(--color-secondary) h s 25%);
+        }
+    }
+    &.tertiary {
+        background-color: hsl(from var(--color-tertiary) h s l);
+        color: hsl(from var(--color-tertiary) h s 100%);
+        border: 1px solid hsl(from var(--color-tertiary) h s 10%);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: hsl(from var(--color-tertiary) h s 25%);
+        }
+    }
+    &.rounded{
+        border-radius: $btn-border-radius;
+    }
+    &.rounded{
+        border-radius: $btn-border-radius;
+    }
+    &.disabled {
+        background-color: hsl(from var(--color-disabled) h s 94%);
+        color: hsl(from var(--color-disabled) h s l);
+        border: 1px solid hsl(from var(--color-disabled) h s 10%);
+        cursor: not-allowed;
+    }
+
+    &.shadow {
+        box-shadow: $shadow-primary-button;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: $shadow-primary-medium;
+        }
+
+        &:active {
+            box-shadow: $shadow-primary-light;
+        }
+    }
+    // &.white {
+    //     color: $color-white-text;
+    //     background:  $btn-white-background;
+    //     cursor: pointer;
+    //     border: 1px solid  $btn-white-border;
+    //     &:hover,
+    //     &:focus,
+    //     &:active {
+    //         color: $color-white-text-hover;
+    //         background-color: $color-primary;
+    //     }
+    // }
+
+
+    // &.button {
+    // position: relative;
+    // text-decoration: none;
+    // color: #fff;
+    // background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    // padding: 14px 25px;
+    // border-radius: 10px;
+    // font-size: 1.25em;
+    // cursor: pointer;
+    // }
+
+    // .button span {
+    // position: relative;
+    // z-index: 1;
+    // }
+
+    // .button::before {
+    // content: "";
+    // position: absolute;
+    // inset: 1px;
+    // background: #272727;
+    // border-radius: 9px;
+    // transition: 0.5s;
+    // }
+
+    // .button:hover::before {
+    // opacity: 0.7;
+    // }
+
+    // .button::after {
+    // content: "";
+    // position: absolute;
+    // inset: 0px;
+    // background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    // border-radius: 9px;
+    // transition: 0.5s;
+    // opacity: 0;
+    // filter: blur(20px);
+    // }
+
+    // .button:hover:after {
+    // opacity: 1;
+    // }
+
 
 }

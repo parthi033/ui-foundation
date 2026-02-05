@@ -24,6 +24,16 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        {
+          src: '../node_modules/@fortawesome/fontawesome-free/css/all.min.css',
+          dest: 'fontawesome/css/all.min.css'
+        },
+        {
+          src: '../node_modules/@fortawesome/fontawesome-free/webfonts',
+          dest: 'fontawesome/webfonts'
+        }
+      ]
     },
   ],
   testing: {

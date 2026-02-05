@@ -7,11 +7,15 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                                     | Default     |
-| --------- | --------- | ----------- | ---------------------------------------- | ----------- |
-| `label`   | `label`   |             | `string`                                 | `undefined` |
-| `rounded` | `rounded` |             | `boolean`                                | `false`     |
-| `type`    | `type`    |             | `"disabled" \| "primary" \| "secondary"` | `'primary'` |
+| Property    | Attribute    | Description | Type                                                              | Default     |
+| ----------- | ------------ | ----------- | ----------------------------------------------------------------- | ----------- |
+| `iconLeft`  | `icon-left`  |             | `string`                                                          | `undefined` |
+| `iconOnly`  | `icon-only`  |             | `boolean`                                                         | `false`     |
+| `iconRight` | `icon-right` |             | `string`                                                          | `undefined` |
+| `label`     | `label`      |             | `string`                                                          | `undefined` |
+| `rounded`   | `rounded`    |             | `boolean`                                                         | `false`     |
+| `shadow`    | `shadow`     |             | `boolean`                                                         | `false`     |
+| `type`      | `type`       |             | `"disabled" \| "primary" \| "secondary" \| "tertiary" \| "white"` | `'primary'` |
 
 
 ----------------------------------------------

@@ -21,15 +21,25 @@ export namespace Components {
         "middle": string;
     }
     interface PnButton {
+        "iconLeft": string;
+        /**
+          * @default false
+         */
+        "iconOnly": boolean;
+        "iconRight": string;
         "label": string;
         /**
           * @default false
          */
         "rounded": boolean;
         /**
+          * @default false
+         */
+        "shadow": boolean;
+        /**
           * @default 'primary'
          */
-        "type": 'primary' | 'secondary' | 'disabled';
+        "type": 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled';
     }
 }
 declare global {
@@ -66,15 +76,25 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface PnButton {
+        "iconLeft"?: string;
+        /**
+          * @default false
+         */
+        "iconOnly"?: boolean;
+        "iconRight"?: string;
         "label"?: string;
         /**
           * @default false
          */
         "rounded"?: boolean;
         /**
+          * @default false
+         */
+        "shadow"?: boolean;
+        /**
           * @default 'primary'
          */
-        "type"?: 'primary' | 'secondary' | 'disabled';
+        "type"?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled';
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

@@ -4,17 +4,138 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
+    
+    <!-- Font Awesome from node_modules -->
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    
     <script type="module" src="/build/ui-foundation.esm.js"></script>
     <script nomodule src="/build/ui-foundation.js"></script>
+    
+    <style>
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding: 2rem;
+        line-height: 1.6;
+        color: #374151;
+      }
+      .dark body { 
+        color: #FFF;
+      }
+      
+      .section {
+        margin: 2rem 0;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+      }
+      
+      .section h3 {
+        margin-top: 0;
+      }
+      
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 1rem 0;
+      }
+      
+      .dark-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <p>Button Component</p>
-    <pn-button label="Primary"></pn-button>
-    <pn-button type="secondary" label="Secondary"></pn-button>
-    <pn-button type="primary" label="Rounded Primary" rounded=true></pn-button>
-    <pn-button type="disabled" label="Disabled"></pn-button>
-    
-    
+    <button class="dark-toggle" onclick="document.documentElement.classList.toggle('dark')">
+      🌙 Toggle Dark
+    </button>
+
+    <h1>UI Foundation - Button Components</h1>
+
+    <div class="section">
+      <h3>Basic Buttons</h3>
+      <div class="button-group">
+        <pn-button label="Primary"></pn-button>
+        <pn-button type="reverse" label="Reverse"></pn-button>
+        <pn-button type="secondary" label="Secondary"></pn-button>
+        <pn-button type="tertiary" label="Tertiary"></pn-button>
+        <pn-button type="disabled" label="Disabled"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Button Variations</h3>
+      <div class="button-group">
+        <pn-button type="primary" label="Rounded Primary" rounded="true"></pn-button>
+        <pn-button type="primary" label="Primary Shadow" shadow="true"></pn-button>
+        <pn-button type="secondary" label="Secondary Shadow" shadow="true"></pn-button>
+        <pn-button type="primary" label="Rounded + Shadow" rounded="true" shadow="true"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Icons with Text - Left Side</h3>
+      <div class="button-group">
+        <pn-button type="primary" label="Save" icon-left="fas fa-save"></pn-button>
+        <pn-button type="secondary" label="Download" icon-left="fas fa-download"></pn-button>
+        <pn-button type="tertiary" label="Settings" icon-left="fas fa-cog"></pn-button>
+        <pn-button type="primary" label="Upload" icon-left="fas fa-upload" rounded="true"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Icons with Text - Right Side</h3>
+      <div class="button-group">
+        <pn-button type="primary" label="Next" icon-right="fas fa-arrow-right"></pn-button>
+        <pn-button type="secondary" label="Send" icon-right="fas fa-paper-plane"></pn-button>
+        <pn-button type="tertiary" label="External Link" icon-right="fas fa-external-link-alt"></pn-button>
+        <pn-button type="primary" label="Continue" icon-right="fas fa-chevron-right" shadow="true"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Icon-Only Buttons</h3>
+      <div class="button-group">
+        <pn-button type="primary" icon-left="fas fa-heart" icon-only="true"></pn-button>
+        <pn-button type="secondary" icon-left="fas fa-star" icon-only="true"></pn-button>
+        <pn-button type="tertiary" icon-left="fas fa-bell" icon-only="true"></pn-button>
+        <pn-button type="primary" icon-left="fas fa-user" icon-only="true" rounded="true"></pn-button>
+        <pn-button type="secondary" icon-left="fas fa-search" icon-only="true" shadow="true"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Complex Icon Combinations</h3>
+      <div class="button-group">
+        <pn-button type="primary" label="Save & Exit" icon-left="fas fa-save" icon-right="fas fa-sign-out-alt"></pn-button>
+        <pn-button type="secondary" label="Copy Link" icon-left="fas fa-copy" icon-right="fas fa-link" rounded="true" shadow="true"></pn-button>
+        <pn-button type="tertiary" label="Import File" icon-left="fas fa-file-import" icon-right="fas fa-chevron-down"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Action Buttons</h3>
+      <div class="button-group">
+        <pn-button type="primary" label="Create New" icon-left="fas fa-plus" shadow="true"></pn-button>
+        <pn-button type="secondary" label="Edit" icon-left="fas fa-edit"></pn-button>
+        <pn-button type="tertiary" label="Delete" icon-left="fas fa-trash"></pn-button>
+        <pn-button type="primary" label="Refresh" icon-left="fas fa-sync-alt" rounded="true"></pn-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Social & Communication</h3>
+      <div class="button-group">
+        <pn-button type="primary" label="Share" icon-left="fas fa-share-alt"></pn-button>
+        <pn-button type="secondary" label="Comment" icon-left="fas fa-comment"></pn-button>
+        <pn-button type="tertiary" label="Like" icon-left="fas fa-thumbs-up"></pn-button>
+        <pn-button type="primary" icon-left="fab fa-twitter" icon-only="true" rounded="true" shadow="true"></pn-button>
+        <pn-button type="secondary" icon-left="fab fa-facebook" icon-only="true" rounded="true" shadow="true"></pn-button>
+      </div>
+    </div>
+
   </body>
 </html>
