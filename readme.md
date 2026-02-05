@@ -38,7 +38,7 @@ A versatile button component with icon support and multiple variations.
 
 #### Props:
 - `label` (string): Text displayed on the button
-- `type` ('primary' | 'secondary' | 'tertiary' | 'white' | 'disabled'): Button style variant
+- `type` ('primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent'): Button style variant
 - `rounded` (boolean): Apply rounded corners
 - `shadow` (boolean): Add shadow effect
 - `iconLeft` (string): Icon class for left-side icon (e.g., "fas fa-save")
@@ -50,17 +50,20 @@ A versatile button component with icon support and multiple variations.
 <!-- Basic buttons -->
 <pn-button label="Primary" type="primary"></pn-button>
 <pn-button label="Secondary" type="secondary"></pn-button>
+<pn-button label="Transparent" type="transparent"></pn-button>
 
 <!-- With icons -->
 <pn-button label="Save" type="primary" icon-left="fas fa-save"></pn-button>
 <pn-button label="Next" type="secondary" icon-right="fas fa-arrow-right"></pn-button>
+<pn-button label="Edit" type="transparent" icon-left="fas fa-edit"></pn-button>
 
 <!-- Icon only -->
 <pn-button type="primary" icon-left="fas fa-heart" icon-only="true"></pn-button>
+<pn-button type="transparent" icon-left="fas fa-plus" icon-only="true"></pn-button>
 
 <!-- Variations -->
 <pn-button label="Rounded" type="primary" rounded="true"></pn-button>
-<pn-button label="With Shadow" type="primary" shadow="true"></pn-button>
+<pn-button label="With Shadow" type="transparent" shadow="true"></pn-button>
 ```
 
 #### Icon Libraries Support:

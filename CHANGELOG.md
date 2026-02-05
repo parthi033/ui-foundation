@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-02-04
+
+### ✨ Added
+- **Transparent Button Variation**: New `transparent` button type with adaptive theming
+- **Transparent Button Tokens**: Added CSS custom properties for transparent button styling in both light and dark themes
+- **Enhanced Demo**: Updated index.html with transparent button examples across all sections
+
+### 🎨 Enhanced
+- **Button Type System**: Extended button type union to include `'transparent'` option
+- **Theme Adaptability**: Transparent buttons automatically adapt text and border colors for optimal contrast in light/dark modes
+- **Design Token System**: Added `--btn-transparent-*` tokens for consistent theming
+
+### 🔧 Technical
+- **Color Tokens**: Added transparent-specific tokens that respond to primary color changes
+- **SCSS Variables**: Created corresponding SCSS variables for transparent button styling
+- **TypeScript Types**: Updated component prop types to include transparent variant
+
+### 📱 Usage Examples
+```html
+<!-- Basic transparent button -->
+<pn-button type="transparent" label="Transparent"></pn-button>
+
+<!-- With icons -->
+<pn-button type="transparent" label="Edit" icon-left="fas fa-edit"></pn-button>
+
+<!-- Icon only -->
+<pn-button type="transparent" icon-left="fas fa-plus" icon-only="true"></pn-button>
+
+<!-- With effects -->
+<pn-button type="transparent" label="Ghost Shadow" shadow="true"></pn-button>
+```
+
+### 🎯 Theme Behavior
+- **Light Theme**: Primary color text with primary border, subtle hover effect
+- **Dark Theme**: Lighter text (85% lightness) with muted border (70% lightness) for better contrast
+
 ## [0.1.0] - 2026-02-04
 
 ### ✨ Added

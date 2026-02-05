@@ -7,7 +7,7 @@ import { Component, Prop, h } from "@stencil/core";
 })
 export class PnButton {
     @Prop() label: string;
-    @Prop() type: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' = 'primary';
+    @Prop() type: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent' = 'primary';
     @Prop() rounded: boolean = false;
     @Prop() shadow: boolean = false;
     @Prop() iconLeft: string;

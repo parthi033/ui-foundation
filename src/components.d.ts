@@ -39,7 +39,7 @@ export namespace Components {
         /**
           * @default 'primary'
          */
-        "type": 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled';
+        "type": 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent';
     }
 }
 declare global {
@@ -94,7 +94,7 @@ declare namespace LocalJSX {
         /**
           * @default 'primary'
          */
-        "type"?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled';
+        "type"?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent';
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

@@ -35,7 +35,8 @@ $disabled-hex: #5b5b5b !default;
    --color-disabled-s: #{saturation($disabled-hex)};
    --color-disabled-l: #{lightness($disabled-hex)};
    --color-disabled: hsl(var(--color-disabled-h), var(--color-disabled-s), var(--color-disabled-l));
-  /* Typography */
+  
+   /* Typography */
   --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   --font-size-base: 16px;
@@ -44,14 +45,22 @@ $disabled-hex: #5b5b5b !default;
   --font-size-xl: 20px;
   --line-height-base: 1.5;
   --line-height-tight: 1.25;
+  --body-font-color: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+
 
   /* Box Shadows */
   --shadow-primary-light: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.1);
   --shadow-primary-medium: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.15);
   --shadow-primary-heavy: 0 8px 16px hsl(var(--color-primary-h) var(--color-primary-s) var(--color-primary-l) / 0.2);
   --shadow-primary-button: 0 8px 8px hsl(var(--color-primary-h) var(--color-primary-s) 20% / 0.3);
-
-   --body-font-color: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  
+  /* Transparent Button */
+  --btn-transparent-bg: transparent;
+  --btn-transparent-text: var(--color-primary);
+  --btn-transparent-border: var(--color-primary);
+  --btn-transparent-hover-bg: var(--color-primary);
+  --btn-transparent-hover-text: hsl(var(--color-primary-h) var(--color-primary-s) 100%);
+  
 }
 
 /* Dark Theme */
@@ -61,6 +70,14 @@ $disabled-hex: #5b5b5b !default;
    --color-tertiary-l: 16%;
    --color-disabled-l: 16%;
    --body-font-color: hsl(var(--color-primary-h), var(--color-primary-s), 100%);
+}
+
+/* Dark Theme - Transparent Button Override */
+.dark {
+   --btn-transparent-text: hsl(var(--color-primary-h), var(--color-primary-s), 95%);
+   --btn-transparent-border: hsl(var(--color-primary-h), var(--color-primary-s), 90%);
+   --btn-transparent-hover-bg: hsl(var(--color-primary-h), var(--color-primary-s), 95%);
+   --btn-transparent-hover-text: hsl(var(--color-primary-h), var(--color-primary-s), 20%);
 }
 
    /* Typography */
@@ -79,6 +96,13 @@ $disabled-hex: #5b5b5b !default;
    $shadow-primary-medium: var(--shadow-primary-medium);
    $shadow-primary-heavy: var(--shadow-primary-heavy);
    $shadow-primary-button: var(--shadow-primary-button);
+
+   /* Transparent Button */
+   $btn-transparent-bg: var(--btn-transparent-bg);
+   $btn-transparent-text: var(--btn-transparent-text);
+   $btn-transparent-border: var(--btn-transparent-border);
+   $btn-transparent-hover-bg: var(--btn-transparent-hover-bg);
+   $btn-transparent-hover-text: var(--btn-transparent-hover-text);
 
    /* Base Text */
    $font-weight-semibold: 600;
