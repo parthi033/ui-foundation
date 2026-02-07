@@ -1,0 +1,125 @@
+@import '../../global/_tokens.scss';
+
+:host { display: block; }
+pn-toggle { display: block; }
+
+.pn-tg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  color: var(--input-label-color);
+  font-weight: var(--input-label-font-weight);
+  user-select: none;
+
+  &__control {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__track {
+    display: inline-flex;
+    align-items: center;
+    width: 2.75rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    background: var(--input-border);
+    transition: background 0.2s ease;
+    padding: 2px;
+  }
+
+  &__thumb {
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+  }
+
+  &__text {
+    line-height: 1.4;
+  }
+
+  // Sizes
+  &--small &__track {
+    width: 2.25rem;
+    height: 1.25rem;
+    border-radius: 0.625rem;
+  }
+
+  &--small &__thumb {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  &--small &__text {
+    font-size: $font-size-sm;
+  }
+
+  &--large &__track {
+    width: 3.25rem;
+    height: 1.75rem;
+    border-radius: 0.875rem;
+  }
+
+  &--large &__thumb {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  // Checked
+  &--checked &__track {
+    background: var(--color-primary);
+  }
+
+  &--checked &__thumb {
+    transform: translateX(calc(100% + 2px));
+  }
+
+  &--checked#{&}--small &__thumb {
+    transform: translateX(calc(100% + 2px));
+  }
+
+  &--checked#{&}--large &__thumb {
+    transform: translateX(calc(100% + 2px));
+  }
+
+  // Focused
+  &--focused &__track {
+    box-shadow: var(--input-focus-shadow);
+  }
+
+  // Disabled
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  // Hover
+  &:hover:not(.pn-tg--disabled) &__track {
+    background: hsl(from var(--input-border) h s calc(l - 10%));
+  }
+
+  &--checked:hover:not(.pn-tg--disabled) &__track {
+    background: hsl(from var(--color-primary) h s calc(l - 8%));
+  }
+}

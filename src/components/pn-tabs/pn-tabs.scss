@@ -1,0 +1,119 @@
+@import '../../global/_tokens.scss';
+
+:host { display: block; }
+pn-tabs { display: block; }
+
+.pn-tbs {
+  font-family: $font-family-primary;
+
+  &__list {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--input-border);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  &--full-width &__list {
+    width: 100%;
+  }
+
+  &--full-width &__tab {
+    flex: 1;
+    justify-content: center;
+  }
+
+  &__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    font-family: $font-family-primary;
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: var(--input-placeholder);
+    white-space: nowrap;
+    transition: all 0.15s ease;
+
+    &:hover:not([disabled]) {
+      color: var(--input-label-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary-fg);
+      outline-offset: -2px;
+    }
+
+    &--active {
+      color: var(--color-primary-fg);
+      border-bottom-color: var(--color-primary-fg);
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+  }
+
+  &--compact &__tab {
+    padding: 0.5rem 1rem;
+    font-size: $font-size-sm;
+  }
+
+  // Pills variant
+  &--pills &__list {
+    border-bottom: none;
+    gap: 0.5rem;
+    padding: 0.25rem;
+    background: hsl(from var(--input-bg) h s calc(l - 4%));
+    border-radius: 8px;
+    width: fit-content;
+  }
+
+  &--pills &__tab {
+    border-bottom: none;
+    margin-bottom: 0;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+
+    &--active {
+      background: var(--input-bg);
+      color: var(--input-label-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &--pills#{&}--full-width &__list {
+    width: 100%;
+  }
+
+  // Underline variant
+  &--underline &__list {
+    border-bottom: 1px solid var(--input-border);
+  }
+
+  &--underline &__tab {
+    border-bottom-width: 3px;
+    margin-bottom: -1px;
+    font-weight: 600;
+  }
+
+  &__icon {
+    font-size: 0.875em;
+  }
+
+  &__panels {
+    padding: 1rem 0;
+  }
+
+  &__panel[hidden] {
+    display: none;
+  }
+}

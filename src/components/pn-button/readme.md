@@ -18,6 +18,19 @@
 | `type`      | `type`       |             | `"disabled" \| "primary" \| "secondary" \| "tertiary" \| "transparent" \| "white"` | `'primary'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [pn-header](../pn-header)
+
+### Graph
+```mermaid
+graph TD;
+  pn-header --> pn-button
+  style pn-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

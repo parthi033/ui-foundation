@@ -1,0 +1,110 @@
+@import '../../global/_tokens.scss';
+
+:host { display: inline-block; }
+pn-tooltip { display: inline-block; }
+
+.pn-tt {
+  position: relative;
+  display: inline-flex;
+  font-family: $font-family-primary;
+
+  &__trigger {
+    display: inline-flex;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 9999;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fff;
+    background: hsl(from var(--color-primary) h 10% 20%);
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    // Arrow
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: inherit;
+      transform: rotate(45deg);
+    }
+  }
+
+  // Positions
+  &--top &__content {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+
+    &::after {
+      bottom: -3px;
+      left: 50%;
+      margin-left: -3px;
+    }
+  }
+
+  &--bottom &__content {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+
+    &::after {
+      top: -3px;
+      left: 50%;
+      margin-left: -3px;
+    }
+  }
+
+  &--left &__content {
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%) translateX(4px);
+
+    &::after {
+      right: -3px;
+      top: 50%;
+      margin-top: -3px;
+    }
+  }
+
+  &--right &__content {
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-4px);
+
+    &::after {
+      left: -3px;
+      top: 50%;
+      margin-top: -3px;
+    }
+  }
+
+  // Visible state
+  &--visible &__content {
+    opacity: 1;
+  }
+
+  &--visible#{&}--top &__content {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  &--visible#{&}--bottom &__content {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  &--visible#{&}--left &__content {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  &--visible#{&}--right &__content {
+    transform: translateY(-50%) translateX(0);
+  }
+}

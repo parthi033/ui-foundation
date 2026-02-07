@@ -5,6 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AccordionItem } from "./components/pn-accordion/pn-accordion";
+import { BreadcrumbItem } from "./components/pn-breadcrumb/pn-breadcrumb";
+import { DropdownOption } from "./components/pn-dropdown/pn-dropdown";
+import { SidebarItem } from "./components/pn-sidebar/pn-sidebar";
+import { TabItem } from "./components/pn-tabs/pn-tabs";
+export { AccordionItem } from "./components/pn-accordion/pn-accordion";
+export { BreadcrumbItem } from "./components/pn-breadcrumb/pn-breadcrumb";
+export { DropdownOption } from "./components/pn-dropdown/pn-dropdown";
+export { SidebarItem } from "./components/pn-sidebar/pn-sidebar";
+export { TabItem } from "./components/pn-tabs/pn-tabs";
 export namespace Components {
     interface MyComponent {
         /**
@@ -19,6 +29,105 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+    }
+    interface PnAccordion {
+        /**
+          * @default true
+         */
+        "bordered": boolean;
+        /**
+          * @default false
+         */
+        "compact": boolean;
+        /**
+          * @default []
+         */
+        "items": AccordionItem[];
+        /**
+          * @default false
+         */
+        "multiple": boolean;
+    }
+    interface PnAlert {
+        "alertTitle": string;
+        /**
+          * @default false
+         */
+        "dismissible": boolean;
+        /**
+          * @default true
+         */
+        "icon": boolean;
+        /**
+          * @default 'info'
+         */
+        "type": 'success' | 'error' | 'warning' | 'info';
+    }
+    interface PnAvatar {
+        /**
+          * @default ''
+         */
+        "alt": string;
+        /**
+          * @default false
+         */
+        "border": boolean;
+        "name": string;
+        /**
+          * @default 'circle'
+         */
+        "shape": 'circle' | 'square';
+        /**
+          * @default 'medium'
+         */
+        "size": 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+        "src": string;
+        /**
+          * @default ''
+         */
+        "status": 'online' | 'offline' | 'busy' | 'away' | '';
+    }
+    interface PnBadge {
+        /**
+          * @default false
+         */
+        "dot": boolean;
+        "icon": string;
+        /**
+          * @default false
+         */
+        "rounded": boolean;
+        /**
+          * @default 'medium'
+         */
+        "size": 'small' | 'medium' | 'large';
+        "text": string;
+        /**
+          * @default 'primary'
+         */
+        "type": 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info' | 'neutral';
+        /**
+          * @default 'solid'
+         */
+        "variant": 'solid' | 'outline' | 'soft';
+    }
+    interface PnBreadcrumb {
+        /**
+          * @default '...'
+         */
+        "collapseLabel": string;
+        /**
+          * @default []
+         */
+        "items": BreadcrumbItem[];
+        /**
+          * @default 0
+         */
+        "maxItems": number;
+        /**
+          * @default '/'
+         */
+        "separator": string;
     }
     interface PnButton {
         "iconLeft": string;
@@ -40,6 +149,151 @@ export namespace Components {
           * @default 'primary'
          */
         "type": 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent';
+    }
+    interface PnCard {
+        "cardTitle": string;
+        /**
+          * @default false
+         */
+        "clickable": boolean;
+        /**
+          * @default false
+         */
+        "compact": boolean;
+        /**
+          * @default false
+         */
+        "hoverable": boolean;
+        "href": string;
+        "image": string;
+        /**
+          * @default ''
+         */
+        "imageAlt": string;
+        "subtitle": string;
+        /**
+          * @default 'default'
+         */
+        "variant": 'default' | 'outlined' | 'elevated';
+    }
+    interface PnCheckbox {
+        "checkboxId": string;
+        /**
+          * @default false
+         */
+        "checked": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default false
+         */
+        "error": boolean;
+        "errorMessage": string;
+        /**
+          * @default false
+         */
+        "indeterminate": boolean;
+        "label": string;
+        "name": string;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
+    interface PnDropdown {
+        /**
+          * @default false
+         */
+        "clearable": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        "dropdownId": string;
+        /**
+          * @default false
+         */
+        "error": boolean;
+        /**
+          * @default ''
+         */
+        "errorMessage": string;
+        "iconLeft": string;
+        "label": string;
+        "name": string;
+        /**
+          * @default 'No results found'
+         */
+        "noResultsText": string;
+        /**
+          * @default []
+         */
+        "options": DropdownOption[];
+        /**
+          * @default 'Select an option'
+         */
+        "placeholder": string;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default false
+         */
+        "typeahead": boolean;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
+    interface PnFormField {
+        /**
+          * @default false
+         */
+        "error": boolean;
+        "errorMessage": string;
+        "fieldId": string;
+        "hint": string;
+        /**
+          * @default false
+         */
+        "inline": boolean;
+        "label": string;
+        /**
+          * @default false
+         */
+        "required": boolean;
+    }
+    interface PnHeader {
+        /**
+          * @default []
+         */
+        "actions": ActionButton[];
+        "company": string;
+        "logo": string;
+        "logoAltText": string;
+        /**
+          * @default []
+         */
+        "navigation": NavigationItem[];
+        /**
+          * @default false
+         */
+        "showSearch": boolean;
+        /**
+          * @default []
+         */
+        "utilityLinks": { label: string; href?: string }[];
+        /**
+          * @default 'default'
+         */
+        "variant": HeaderVariant;
     }
     interface PnInput {
         "autocomplete"?: string;
@@ -86,10 +340,321 @@ export namespace Components {
          */
         "value"?: string | number;
     }
+    interface PnLink {
+        "href": string;
+        /**
+          * @default false
+         */
+        "newTab"?: boolean;
+        "text": string;
+    }
+    interface PnModal {
+        "close": () => Promise<void>;
+        /**
+          * @default true
+         */
+        "closeOnEsc": boolean;
+        /**
+          * @default true
+         */
+        "closeOnOverlay": boolean;
+        "modalId": string;
+        "modalTitle": string;
+        /**
+          * @default false
+         */
+        "open": boolean;
+        "show": () => Promise<void>;
+        /**
+          * @default true
+         */
+        "showClose": boolean;
+        /**
+          * @default 'medium'
+         */
+        "size": 'small' | 'medium' | 'large' | 'fullscreen';
+    }
+    interface PnPagination {
+        /**
+          * @default false
+         */
+        "compact": boolean;
+        /**
+          * @default 1
+         */
+        "currentPage": number;
+        /**
+          * @default true
+         */
+        "showFirstLast": boolean;
+        /**
+          * @default true
+         */
+        "showPrevNext": boolean;
+        /**
+          * @default 1
+         */
+        "siblingCount": number;
+        /**
+          * @default 'medium'
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * @default 1
+         */
+        "totalPages": number;
+    }
+    interface PnRadio {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default false
+         */
+        "error": boolean;
+        "errorMessage": string;
+        /**
+          * @default false
+         */
+        "inline": boolean;
+        "label": string;
+        "name": string;
+        /**
+          * @default []
+         */
+        "options": Array<{ label: string; value: string; disabled?: boolean }>;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
+    interface PnSidebar {
+        /**
+          * @default ''
+         */
+        "activeItem": string;
+        /**
+          * @default false
+         */
+        "collapsed": boolean;
+        /**
+          * @default true
+         */
+        "collapsible": boolean;
+        "header": string;
+        /**
+          * @default []
+         */
+        "items": SidebarItem[];
+        /**
+          * @default '260px'
+         */
+        "width": string;
+    }
+    interface PnSpinner {
+        "color": string;
+        /**
+          * @default 'Loading'
+         */
+        "label": string;
+        /**
+          * @default false
+         */
+        "overlay": boolean;
+        /**
+          * @default 'medium'
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * @default '1rem'
+         */
+        "skeletonHeight": string;
+        /**
+          * @default 1
+         */
+        "skeletonLines": number;
+        /**
+          * @default '4px'
+         */
+        "skeletonRadius": string;
+        /**
+          * @default '100%'
+         */
+        "skeletonWidth": string;
+        /**
+          * @default 'spinner'
+         */
+        "type": 'spinner' | 'dots' | 'skeleton';
+    }
+    interface PnTabs {
+        /**
+          * @default ''
+         */
+        "activeTab": string;
+        /**
+          * @default false
+         */
+        "compact": boolean;
+        /**
+          * @default false
+         */
+        "fullWidth": boolean;
+        /**
+          * @default []
+         */
+        "tabs": TabItem[];
+        /**
+          * @default 'default'
+         */
+        "variant": 'default' | 'pills' | 'underline';
+    }
+    interface PnTextarea {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default false
+         */
+        "error": boolean;
+        "errorMessage": string;
+        "label": string;
+        "maxlength": number;
+        "name": string;
+        "placeholder": string;
+        /**
+          * @default false
+         */
+        "readonly": boolean;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 'vertical'
+         */
+        "resize": 'none' | 'vertical' | 'horizontal' | 'both';
+        /**
+          * @default 4
+         */
+        "rows": number;
+        /**
+          * @default false
+         */
+        "showCount": boolean;
+        "textareaId": string;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
+    interface PnToast {
+        "addToast": (options: { message: string; type?: "success" | "error" | "warning" | "info"; duration?: number; dismissible?: boolean; }) => Promise<string>;
+        "clearAll": () => Promise<void>;
+        /**
+          * @default 5
+         */
+        "maxToasts": number;
+        /**
+          * @default 'top-right'
+         */
+        "position": 'top-right' | 'top-left' | 'top-center' | 'bottom-right' | 'bottom-left' | 'bottom-center';
+        "removeToast": (id: string) => Promise<void>;
+    }
+    interface PnToggle {
+        /**
+          * @default false
+         */
+        "checked": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        "label": string;
+        /**
+          * @default 'right'
+         */
+        "labelPosition": 'left' | 'right';
+        "name": string;
+        /**
+          * @default 'medium'
+         */
+        "size": 'small' | 'medium' | 'large';
+        "toggleId": string;
+    }
+    interface PnTooltip {
+        /**
+          * @default 200
+         */
+        "delay": number;
+        /**
+          * @default 'top'
+         */
+        "position": 'top' | 'bottom' | 'left' | 'right';
+        "text": string;
+        "tooltipId": string;
+    }
+}
+export interface PnAccordionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnAccordionElement;
+}
+export interface PnAlertCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnAlertElement;
+}
+export interface PnCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnCheckboxElement;
+}
+export interface PnDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnDropdownElement;
+}
+export interface PnHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnHeaderElement;
 }
 export interface PnInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPnInputElement;
+}
+export interface PnModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnModalElement;
+}
+export interface PnPaginationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnPaginationElement;
+}
+export interface PnRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnRadioElement;
+}
+export interface PnSidebarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnSidebarElement;
+}
+export interface PnTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnTabsElement;
+}
+export interface PnTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnTextareaElement;
+}
+export interface PnToastCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnToastElement;
+}
+export interface PnToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPnToggleElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -98,11 +663,128 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPnAccordionElementEventMap {
+        "pnToggle": { id: string; open: boolean };
+    }
+    interface HTMLPnAccordionElement extends Components.PnAccordion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnAccordionElementEventMap>(type: K, listener: (this: HTMLPnAccordionElement, ev: PnAccordionCustomEvent<HTMLPnAccordionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnAccordionElementEventMap>(type: K, listener: (this: HTMLPnAccordionElement, ev: PnAccordionCustomEvent<HTMLPnAccordionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnAccordionElement: {
+        prototype: HTMLPnAccordionElement;
+        new (): HTMLPnAccordionElement;
+    };
+    interface HTMLPnAlertElementEventMap {
+        "pnDismiss": void;
+    }
+    interface HTMLPnAlertElement extends Components.PnAlert, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnAlertElementEventMap>(type: K, listener: (this: HTMLPnAlertElement, ev: PnAlertCustomEvent<HTMLPnAlertElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnAlertElementEventMap>(type: K, listener: (this: HTMLPnAlertElement, ev: PnAlertCustomEvent<HTMLPnAlertElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnAlertElement: {
+        prototype: HTMLPnAlertElement;
+        new (): HTMLPnAlertElement;
+    };
+    interface HTMLPnAvatarElement extends Components.PnAvatar, HTMLStencilElement {
+    }
+    var HTMLPnAvatarElement: {
+        prototype: HTMLPnAvatarElement;
+        new (): HTMLPnAvatarElement;
+    };
+    interface HTMLPnBadgeElement extends Components.PnBadge, HTMLStencilElement {
+    }
+    var HTMLPnBadgeElement: {
+        prototype: HTMLPnBadgeElement;
+        new (): HTMLPnBadgeElement;
+    };
+    interface HTMLPnBreadcrumbElement extends Components.PnBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLPnBreadcrumbElement: {
+        prototype: HTMLPnBreadcrumbElement;
+        new (): HTMLPnBreadcrumbElement;
+    };
     interface HTMLPnButtonElement extends Components.PnButton, HTMLStencilElement {
     }
     var HTMLPnButtonElement: {
         prototype: HTMLPnButtonElement;
         new (): HTMLPnButtonElement;
+    };
+    interface HTMLPnCardElement extends Components.PnCard, HTMLStencilElement {
+    }
+    var HTMLPnCardElement: {
+        prototype: HTMLPnCardElement;
+        new (): HTMLPnCardElement;
+    };
+    interface HTMLPnCheckboxElementEventMap {
+        "pnChange": { checked: boolean; value: string };
+    }
+    interface HTMLPnCheckboxElement extends Components.PnCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnCheckboxElementEventMap>(type: K, listener: (this: HTMLPnCheckboxElement, ev: PnCheckboxCustomEvent<HTMLPnCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnCheckboxElementEventMap>(type: K, listener: (this: HTMLPnCheckboxElement, ev: PnCheckboxCustomEvent<HTMLPnCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnCheckboxElement: {
+        prototype: HTMLPnCheckboxElement;
+        new (): HTMLPnCheckboxElement;
+    };
+    interface HTMLPnDropdownElementEventMap {
+        "pnChange": { value: string; label: string; name?: string };
+        "pnFocus": void;
+        "pnBlur": void;
+    }
+    interface HTMLPnDropdownElement extends Components.PnDropdown, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnDropdownElementEventMap>(type: K, listener: (this: HTMLPnDropdownElement, ev: PnDropdownCustomEvent<HTMLPnDropdownElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnDropdownElementEventMap>(type: K, listener: (this: HTMLPnDropdownElement, ev: PnDropdownCustomEvent<HTMLPnDropdownElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnDropdownElement: {
+        prototype: HTMLPnDropdownElement;
+        new (): HTMLPnDropdownElement;
+    };
+    interface HTMLPnFormFieldElement extends Components.PnFormField, HTMLStencilElement {
+    }
+    var HTMLPnFormFieldElement: {
+        prototype: HTMLPnFormFieldElement;
+        new (): HTMLPnFormFieldElement;
+    };
+    interface HTMLPnHeaderElementEventMap {
+        "headerSearch": string;
+    }
+    interface HTMLPnHeaderElement extends Components.PnHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnHeaderElementEventMap>(type: K, listener: (this: HTMLPnHeaderElement, ev: PnHeaderCustomEvent<HTMLPnHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnHeaderElementEventMap>(type: K, listener: (this: HTMLPnHeaderElement, ev: PnHeaderCustomEvent<HTMLPnHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnHeaderElement: {
+        prototype: HTMLPnHeaderElement;
+        new (): HTMLPnHeaderElement;
     };
     interface HTMLPnInputElementEventMap {
         "pnInput": { value: string | number; name?: string };
@@ -124,10 +806,190 @@ declare global {
         prototype: HTMLPnInputElement;
         new (): HTMLPnInputElement;
     };
+    interface HTMLPnLinkElement extends Components.PnLink, HTMLStencilElement {
+    }
+    var HTMLPnLinkElement: {
+        prototype: HTMLPnLinkElement;
+        new (): HTMLPnLinkElement;
+    };
+    interface HTMLPnModalElementEventMap {
+        "pnOpen": void;
+        "pnClose": void;
+    }
+    interface HTMLPnModalElement extends Components.PnModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnModalElementEventMap>(type: K, listener: (this: HTMLPnModalElement, ev: PnModalCustomEvent<HTMLPnModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnModalElementEventMap>(type: K, listener: (this: HTMLPnModalElement, ev: PnModalCustomEvent<HTMLPnModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnModalElement: {
+        prototype: HTMLPnModalElement;
+        new (): HTMLPnModalElement;
+    };
+    interface HTMLPnPaginationElementEventMap {
+        "pnPageChange": { page: number };
+    }
+    interface HTMLPnPaginationElement extends Components.PnPagination, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnPaginationElementEventMap>(type: K, listener: (this: HTMLPnPaginationElement, ev: PnPaginationCustomEvent<HTMLPnPaginationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnPaginationElementEventMap>(type: K, listener: (this: HTMLPnPaginationElement, ev: PnPaginationCustomEvent<HTMLPnPaginationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnPaginationElement: {
+        prototype: HTMLPnPaginationElement;
+        new (): HTMLPnPaginationElement;
+    };
+    interface HTMLPnRadioElementEventMap {
+        "pnChange": { value: string };
+    }
+    interface HTMLPnRadioElement extends Components.PnRadio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnRadioElementEventMap>(type: K, listener: (this: HTMLPnRadioElement, ev: PnRadioCustomEvent<HTMLPnRadioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnRadioElementEventMap>(type: K, listener: (this: HTMLPnRadioElement, ev: PnRadioCustomEvent<HTMLPnRadioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnRadioElement: {
+        prototype: HTMLPnRadioElement;
+        new (): HTMLPnRadioElement;
+    };
+    interface HTMLPnSidebarElementEventMap {
+        "pnNavigate": { item: SidebarItem };
+        "pnCollapse": { collapsed: boolean };
+    }
+    interface HTMLPnSidebarElement extends Components.PnSidebar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnSidebarElementEventMap>(type: K, listener: (this: HTMLPnSidebarElement, ev: PnSidebarCustomEvent<HTMLPnSidebarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnSidebarElementEventMap>(type: K, listener: (this: HTMLPnSidebarElement, ev: PnSidebarCustomEvent<HTMLPnSidebarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnSidebarElement: {
+        prototype: HTMLPnSidebarElement;
+        new (): HTMLPnSidebarElement;
+    };
+    interface HTMLPnSpinnerElement extends Components.PnSpinner, HTMLStencilElement {
+    }
+    var HTMLPnSpinnerElement: {
+        prototype: HTMLPnSpinnerElement;
+        new (): HTMLPnSpinnerElement;
+    };
+    interface HTMLPnTabsElementEventMap {
+        "pnTabChange": { tabId: string };
+    }
+    interface HTMLPnTabsElement extends Components.PnTabs, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnTabsElementEventMap>(type: K, listener: (this: HTMLPnTabsElement, ev: PnTabsCustomEvent<HTMLPnTabsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnTabsElementEventMap>(type: K, listener: (this: HTMLPnTabsElement, ev: PnTabsCustomEvent<HTMLPnTabsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnTabsElement: {
+        prototype: HTMLPnTabsElement;
+        new (): HTMLPnTabsElement;
+    };
+    interface HTMLPnTextareaElementEventMap {
+        "pnInput": { value: string };
+        "pnChange": { value: string };
+        "pnFocus": void;
+        "pnBlur": void;
+    }
+    interface HTMLPnTextareaElement extends Components.PnTextarea, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnTextareaElementEventMap>(type: K, listener: (this: HTMLPnTextareaElement, ev: PnTextareaCustomEvent<HTMLPnTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnTextareaElementEventMap>(type: K, listener: (this: HTMLPnTextareaElement, ev: PnTextareaCustomEvent<HTMLPnTextareaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnTextareaElement: {
+        prototype: HTMLPnTextareaElement;
+        new (): HTMLPnTextareaElement;
+    };
+    interface HTMLPnToastElementEventMap {
+        "pnDismiss": { id: string };
+    }
+    interface HTMLPnToastElement extends Components.PnToast, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnToastElementEventMap>(type: K, listener: (this: HTMLPnToastElement, ev: PnToastCustomEvent<HTMLPnToastElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnToastElementEventMap>(type: K, listener: (this: HTMLPnToastElement, ev: PnToastCustomEvent<HTMLPnToastElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnToastElement: {
+        prototype: HTMLPnToastElement;
+        new (): HTMLPnToastElement;
+    };
+    interface HTMLPnToggleElementEventMap {
+        "pnChange": { checked: boolean };
+    }
+    interface HTMLPnToggleElement extends Components.PnToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPnToggleElementEventMap>(type: K, listener: (this: HTMLPnToggleElement, ev: PnToggleCustomEvent<HTMLPnToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPnToggleElementEventMap>(type: K, listener: (this: HTMLPnToggleElement, ev: PnToggleCustomEvent<HTMLPnToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPnToggleElement: {
+        prototype: HTMLPnToggleElement;
+        new (): HTMLPnToggleElement;
+    };
+    interface HTMLPnTooltipElement extends Components.PnTooltip, HTMLStencilElement {
+    }
+    var HTMLPnTooltipElement: {
+        prototype: HTMLPnTooltipElement;
+        new (): HTMLPnTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "pn-accordion": HTMLPnAccordionElement;
+        "pn-alert": HTMLPnAlertElement;
+        "pn-avatar": HTMLPnAvatarElement;
+        "pn-badge": HTMLPnBadgeElement;
+        "pn-breadcrumb": HTMLPnBreadcrumbElement;
         "pn-button": HTMLPnButtonElement;
+        "pn-card": HTMLPnCardElement;
+        "pn-checkbox": HTMLPnCheckboxElement;
+        "pn-dropdown": HTMLPnDropdownElement;
+        "pn-form-field": HTMLPnFormFieldElement;
+        "pn-header": HTMLPnHeaderElement;
         "pn-input": HTMLPnInputElement;
+        "pn-link": HTMLPnLinkElement;
+        "pn-modal": HTMLPnModalElement;
+        "pn-pagination": HTMLPnPaginationElement;
+        "pn-radio": HTMLPnRadioElement;
+        "pn-sidebar": HTMLPnSidebarElement;
+        "pn-spinner": HTMLPnSpinnerElement;
+        "pn-tabs": HTMLPnTabsElement;
+        "pn-textarea": HTMLPnTextareaElement;
+        "pn-toast": HTMLPnToastElement;
+        "pn-toggle": HTMLPnToggleElement;
+        "pn-tooltip": HTMLPnTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -144,6 +1006,107 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+    }
+    interface PnAccordion {
+        /**
+          * @default true
+         */
+        "bordered"?: boolean;
+        /**
+          * @default false
+         */
+        "compact"?: boolean;
+        /**
+          * @default []
+         */
+        "items"?: AccordionItem[];
+        /**
+          * @default false
+         */
+        "multiple"?: boolean;
+        "onPnToggle"?: (event: PnAccordionCustomEvent<{ id: string; open: boolean }>) => void;
+    }
+    interface PnAlert {
+        "alertTitle"?: string;
+        /**
+          * @default false
+         */
+        "dismissible"?: boolean;
+        /**
+          * @default true
+         */
+        "icon"?: boolean;
+        "onPnDismiss"?: (event: PnAlertCustomEvent<void>) => void;
+        /**
+          * @default 'info'
+         */
+        "type"?: 'success' | 'error' | 'warning' | 'info';
+    }
+    interface PnAvatar {
+        /**
+          * @default ''
+         */
+        "alt"?: string;
+        /**
+          * @default false
+         */
+        "border"?: boolean;
+        "name"?: string;
+        /**
+          * @default 'circle'
+         */
+        "shape"?: 'circle' | 'square';
+        /**
+          * @default 'medium'
+         */
+        "size"?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+        "src"?: string;
+        /**
+          * @default ''
+         */
+        "status"?: 'online' | 'offline' | 'busy' | 'away' | '';
+    }
+    interface PnBadge {
+        /**
+          * @default false
+         */
+        "dot"?: boolean;
+        "icon"?: string;
+        /**
+          * @default false
+         */
+        "rounded"?: boolean;
+        /**
+          * @default 'medium'
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        "text"?: string;
+        /**
+          * @default 'primary'
+         */
+        "type"?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info' | 'neutral';
+        /**
+          * @default 'solid'
+         */
+        "variant"?: 'solid' | 'outline' | 'soft';
+    }
+    interface PnBreadcrumb {
+        /**
+          * @default '...'
+         */
+        "collapseLabel"?: string;
+        /**
+          * @default []
+         */
+        "items"?: BreadcrumbItem[];
+        /**
+          * @default 0
+         */
+        "maxItems"?: number;
+        /**
+          * @default '/'
+         */
+        "separator"?: string;
     }
     interface PnButton {
         "iconLeft"?: string;
@@ -165,6 +1128,156 @@ declare namespace LocalJSX {
           * @default 'primary'
          */
         "type"?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'disabled' | 'transparent';
+    }
+    interface PnCard {
+        "cardTitle"?: string;
+        /**
+          * @default false
+         */
+        "clickable"?: boolean;
+        /**
+          * @default false
+         */
+        "compact"?: boolean;
+        /**
+          * @default false
+         */
+        "hoverable"?: boolean;
+        "href"?: string;
+        "image"?: string;
+        /**
+          * @default ''
+         */
+        "imageAlt"?: string;
+        "subtitle"?: string;
+        /**
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'outlined' | 'elevated';
+    }
+    interface PnCheckbox {
+        "checkboxId"?: string;
+        /**
+          * @default false
+         */
+        "checked"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        "errorMessage"?: string;
+        /**
+          * @default false
+         */
+        "indeterminate"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onPnChange"?: (event: PnCheckboxCustomEvent<{ checked: boolean; value: string }>) => void;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface PnDropdown {
+        /**
+          * @default false
+         */
+        "clearable"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        "dropdownId"?: string;
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        /**
+          * @default ''
+         */
+        "errorMessage"?: string;
+        "iconLeft"?: string;
+        "label"?: string;
+        "name"?: string;
+        /**
+          * @default 'No results found'
+         */
+        "noResultsText"?: string;
+        "onPnBlur"?: (event: PnDropdownCustomEvent<void>) => void;
+        "onPnChange"?: (event: PnDropdownCustomEvent<{ value: string; label: string; name?: string }>) => void;
+        "onPnFocus"?: (event: PnDropdownCustomEvent<void>) => void;
+        /**
+          * @default []
+         */
+        "options"?: DropdownOption[];
+        /**
+          * @default 'Select an option'
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default false
+         */
+        "typeahead"?: boolean;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface PnFormField {
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        "errorMessage"?: string;
+        "fieldId"?: string;
+        "hint"?: string;
+        /**
+          * @default false
+         */
+        "inline"?: boolean;
+        "label"?: string;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+    }
+    interface PnHeader {
+        /**
+          * @default []
+         */
+        "actions"?: ActionButton[];
+        "company"?: string;
+        "logo"?: string;
+        "logoAltText"?: string;
+        /**
+          * @default []
+         */
+        "navigation"?: NavigationItem[];
+        "onHeaderSearch"?: (event: PnHeaderCustomEvent<string>) => void;
+        /**
+          * @default false
+         */
+        "showSearch"?: boolean;
+        /**
+          * @default []
+         */
+        "utilityLinks"?: { label: string; href?: string }[];
+        /**
+          * @default 'default'
+         */
+        "variant"?: HeaderVariant;
     }
     interface PnInput {
         "autocomplete"?: string;
@@ -215,10 +1328,298 @@ declare namespace LocalJSX {
          */
         "value"?: string | number;
     }
+    interface PnLink {
+        "href"?: string;
+        /**
+          * @default false
+         */
+        "newTab"?: boolean;
+        "text"?: string;
+    }
+    interface PnModal {
+        /**
+          * @default true
+         */
+        "closeOnEsc"?: boolean;
+        /**
+          * @default true
+         */
+        "closeOnOverlay"?: boolean;
+        "modalId"?: string;
+        "modalTitle"?: string;
+        "onPnClose"?: (event: PnModalCustomEvent<void>) => void;
+        "onPnOpen"?: (event: PnModalCustomEvent<void>) => void;
+        /**
+          * @default false
+         */
+        "open"?: boolean;
+        /**
+          * @default true
+         */
+        "showClose"?: boolean;
+        /**
+          * @default 'medium'
+         */
+        "size"?: 'small' | 'medium' | 'large' | 'fullscreen';
+    }
+    interface PnPagination {
+        /**
+          * @default false
+         */
+        "compact"?: boolean;
+        /**
+          * @default 1
+         */
+        "currentPage"?: number;
+        "onPnPageChange"?: (event: PnPaginationCustomEvent<{ page: number }>) => void;
+        /**
+          * @default true
+         */
+        "showFirstLast"?: boolean;
+        /**
+          * @default true
+         */
+        "showPrevNext"?: boolean;
+        /**
+          * @default 1
+         */
+        "siblingCount"?: number;
+        /**
+          * @default 'medium'
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * @default 1
+         */
+        "totalPages"?: number;
+    }
+    interface PnRadio {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        "errorMessage"?: string;
+        /**
+          * @default false
+         */
+        "inline"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onPnChange"?: (event: PnRadioCustomEvent<{ value: string }>) => void;
+        /**
+          * @default []
+         */
+        "options"?: Array<{ label: string; value: string; disabled?: boolean }>;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface PnSidebar {
+        /**
+          * @default ''
+         */
+        "activeItem"?: string;
+        /**
+          * @default false
+         */
+        "collapsed"?: boolean;
+        /**
+          * @default true
+         */
+        "collapsible"?: boolean;
+        "header"?: string;
+        /**
+          * @default []
+         */
+        "items"?: SidebarItem[];
+        "onPnCollapse"?: (event: PnSidebarCustomEvent<{ collapsed: boolean }>) => void;
+        "onPnNavigate"?: (event: PnSidebarCustomEvent<{ item: SidebarItem }>) => void;
+        /**
+          * @default '260px'
+         */
+        "width"?: string;
+    }
+    interface PnSpinner {
+        "color"?: string;
+        /**
+          * @default 'Loading'
+         */
+        "label"?: string;
+        /**
+          * @default false
+         */
+        "overlay"?: boolean;
+        /**
+          * @default 'medium'
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * @default '1rem'
+         */
+        "skeletonHeight"?: string;
+        /**
+          * @default 1
+         */
+        "skeletonLines"?: number;
+        /**
+          * @default '4px'
+         */
+        "skeletonRadius"?: string;
+        /**
+          * @default '100%'
+         */
+        "skeletonWidth"?: string;
+        /**
+          * @default 'spinner'
+         */
+        "type"?: 'spinner' | 'dots' | 'skeleton';
+    }
+    interface PnTabs {
+        /**
+          * @default ''
+         */
+        "activeTab"?: string;
+        /**
+          * @default false
+         */
+        "compact"?: boolean;
+        /**
+          * @default false
+         */
+        "fullWidth"?: boolean;
+        "onPnTabChange"?: (event: PnTabsCustomEvent<{ tabId: string }>) => void;
+        /**
+          * @default []
+         */
+        "tabs"?: TabItem[];
+        /**
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'pills' | 'underline';
+    }
+    interface PnTextarea {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default false
+         */
+        "error"?: boolean;
+        "errorMessage"?: string;
+        "label"?: string;
+        "maxlength"?: number;
+        "name"?: string;
+        "onPnBlur"?: (event: PnTextareaCustomEvent<void>) => void;
+        "onPnChange"?: (event: PnTextareaCustomEvent<{ value: string }>) => void;
+        "onPnFocus"?: (event: PnTextareaCustomEvent<void>) => void;
+        "onPnInput"?: (event: PnTextareaCustomEvent<{ value: string }>) => void;
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 'vertical'
+         */
+        "resize"?: 'none' | 'vertical' | 'horizontal' | 'both';
+        /**
+          * @default 4
+         */
+        "rows"?: number;
+        /**
+          * @default false
+         */
+        "showCount"?: boolean;
+        "textareaId"?: string;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface PnToast {
+        /**
+          * @default 5
+         */
+        "maxToasts"?: number;
+        "onPnDismiss"?: (event: PnToastCustomEvent<{ id: string }>) => void;
+        /**
+          * @default 'top-right'
+         */
+        "position"?: 'top-right' | 'top-left' | 'top-center' | 'bottom-right' | 'bottom-left' | 'bottom-center';
+    }
+    interface PnToggle {
+        /**
+          * @default false
+         */
+        "checked"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        "label"?: string;
+        /**
+          * @default 'right'
+         */
+        "labelPosition"?: 'left' | 'right';
+        "name"?: string;
+        "onPnChange"?: (event: PnToggleCustomEvent<{ checked: boolean }>) => void;
+        /**
+          * @default 'medium'
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        "toggleId"?: string;
+    }
+    interface PnTooltip {
+        /**
+          * @default 200
+         */
+        "delay"?: number;
+        /**
+          * @default 'top'
+         */
+        "position"?: 'top' | 'bottom' | 'left' | 'right';
+        "text"?: string;
+        "tooltipId"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "pn-accordion": PnAccordion;
+        "pn-alert": PnAlert;
+        "pn-avatar": PnAvatar;
+        "pn-badge": PnBadge;
+        "pn-breadcrumb": PnBreadcrumb;
         "pn-button": PnButton;
+        "pn-card": PnCard;
+        "pn-checkbox": PnCheckbox;
+        "pn-dropdown": PnDropdown;
+        "pn-form-field": PnFormField;
+        "pn-header": PnHeader;
         "pn-input": PnInput;
+        "pn-link": PnLink;
+        "pn-modal": PnModal;
+        "pn-pagination": PnPagination;
+        "pn-radio": PnRadio;
+        "pn-sidebar": PnSidebar;
+        "pn-spinner": PnSpinner;
+        "pn-tabs": PnTabs;
+        "pn-textarea": PnTextarea;
+        "pn-toast": PnToast;
+        "pn-toggle": PnToggle;
+        "pn-tooltip": PnTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -226,8 +1627,29 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pn-accordion": LocalJSX.PnAccordion & JSXBase.HTMLAttributes<HTMLPnAccordionElement>;
+            "pn-alert": LocalJSX.PnAlert & JSXBase.HTMLAttributes<HTMLPnAlertElement>;
+            "pn-avatar": LocalJSX.PnAvatar & JSXBase.HTMLAttributes<HTMLPnAvatarElement>;
+            "pn-badge": LocalJSX.PnBadge & JSXBase.HTMLAttributes<HTMLPnBadgeElement>;
+            "pn-breadcrumb": LocalJSX.PnBreadcrumb & JSXBase.HTMLAttributes<HTMLPnBreadcrumbElement>;
             "pn-button": LocalJSX.PnButton & JSXBase.HTMLAttributes<HTMLPnButtonElement>;
+            "pn-card": LocalJSX.PnCard & JSXBase.HTMLAttributes<HTMLPnCardElement>;
+            "pn-checkbox": LocalJSX.PnCheckbox & JSXBase.HTMLAttributes<HTMLPnCheckboxElement>;
+            "pn-dropdown": LocalJSX.PnDropdown & JSXBase.HTMLAttributes<HTMLPnDropdownElement>;
+            "pn-form-field": LocalJSX.PnFormField & JSXBase.HTMLAttributes<HTMLPnFormFieldElement>;
+            "pn-header": LocalJSX.PnHeader & JSXBase.HTMLAttributes<HTMLPnHeaderElement>;
             "pn-input": LocalJSX.PnInput & JSXBase.HTMLAttributes<HTMLPnInputElement>;
+            "pn-link": LocalJSX.PnLink & JSXBase.HTMLAttributes<HTMLPnLinkElement>;
+            "pn-modal": LocalJSX.PnModal & JSXBase.HTMLAttributes<HTMLPnModalElement>;
+            "pn-pagination": LocalJSX.PnPagination & JSXBase.HTMLAttributes<HTMLPnPaginationElement>;
+            "pn-radio": LocalJSX.PnRadio & JSXBase.HTMLAttributes<HTMLPnRadioElement>;
+            "pn-sidebar": LocalJSX.PnSidebar & JSXBase.HTMLAttributes<HTMLPnSidebarElement>;
+            "pn-spinner": LocalJSX.PnSpinner & JSXBase.HTMLAttributes<HTMLPnSpinnerElement>;
+            "pn-tabs": LocalJSX.PnTabs & JSXBase.HTMLAttributes<HTMLPnTabsElement>;
+            "pn-textarea": LocalJSX.PnTextarea & JSXBase.HTMLAttributes<HTMLPnTextareaElement>;
+            "pn-toast": LocalJSX.PnToast & JSXBase.HTMLAttributes<HTMLPnToastElement>;
+            "pn-toggle": LocalJSX.PnToggle & JSXBase.HTMLAttributes<HTMLPnToggleElement>;
+            "pn-tooltip": LocalJSX.PnTooltip & JSXBase.HTMLAttributes<HTMLPnTooltipElement>;
         }
     }
 }

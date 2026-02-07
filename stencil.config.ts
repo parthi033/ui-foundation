@@ -32,6 +32,10 @@ export const config: Config = {
         {
           src: '../node_modules/@fortawesome/fontawesome-free/webfonts',
           dest: 'fontawesome/webfonts'
+        },
+        {
+          src: 'global/images',
+          dest: 'images'
         }
       ]
     },

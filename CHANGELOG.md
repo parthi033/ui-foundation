@@ -5,7 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.1] - 2026-02-07
+
+### ♿ Accessibility (ADA Compliance)
+- **Dark Mode Contrast Fixes**: Introduced `--color-primary-fg` design token for foreground/accent usage of the primary color
+  - **Light mode**: maps to `var(--color-primary)` (no change)
+  - **Dark mode**: renders at 72% lightness for ≥ 4.5:1 contrast ratio against dark backgrounds (WCAG AA)
+- **pn-breadcrumb**: Link text and focus outlines now use `--color-primary-fg` for dark mode compliance
+- **pn-badge**: Outline Primary variant border and text now use `--color-primary-fg` in dark mode
+- **pn-tabs**: Active tab text, active border indicator, and focus outlines updated to `--color-primary-fg`
+- **pn-spinner**: Spinner stroke and dot colors updated to `--color-primary-fg` for dark mode visibility
+
+### 🎨 Enhanced
+- **pn-sidebar**: Hover state now applies primary-tinted background and primary text/icon color for better visual feedback
+- **pn-sidebar**: Badge alignment fixed — badges now sit inline next to label text instead of being pushed to the far right edge
+- **pn-sidebar**: Chevrons on expandable items remain right-aligned via `margin-left: auto`
+
+### 📚 Documentation
+- Added accessibility sections to component READMEs for pn-breadcrumb, pn-badge, pn-tabs, pn-spinner
+- Added styling notes and accessibility section to pn-sidebar README
+
+## [0.2.0] - 2026-02-04
 
 ### ✨ Added
 - **pn-input Component**: New comprehensive input component with full ADA compliance

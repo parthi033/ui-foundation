@@ -1,0 +1,50 @@
+@import '../../global/_tokens.scss';
+
+pn-link {
+  display: inline-block;
+
+  .link {
+    color: $input-label-color;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    &:active {
+      color: var(--color-primary);
+    }
+
+    &--external {
+      .link__icon {
+        font-size: 0.75em;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      &:hover .link__icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  .link__text {
+    line-height: 1;
+  }
+
+  .link__icon {
+    flex-shrink: 0;
+  }
+}

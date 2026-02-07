@@ -1,0 +1,49 @@
+@import '../../global/_tokens.scss';
+
+:host { display: block; }
+pn-form-field { display: block; }
+
+.pn-ff {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: $font-family-primary;
+
+  &--inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__label {
+    font-size: $font-size-base;
+    font-weight: var(--input-label-font-weight);
+    color: var(--input-label-color);
+    margin-bottom: var(--input-label-margin-bottom);
+  }
+
+  &--inline &__label {
+    margin-bottom: 0;
+    white-space: nowrap;
+    min-width: 120px;
+  }
+
+  &__required {
+    color: var(--input-required-color);
+    margin-left: 0.125rem;
+  }
+
+  &__control {
+    flex: 1;
+  }
+
+  &__hint {
+    font-size: $font-size-sm;
+    color: var(--input-placeholder);
+  }
+
+  &__error {
+    font-size: $font-size-sm;
+    color: var(--input-error-text);
+  }
+}
