@@ -73,161 +73,11 @@
     </style>
   </head>
   <body>
-    <!-- 1. Default -->
-    <div class="variant-label">1. Default</div>
-    <pn-header id="header-default" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-
-    <!-- 2. Centered Navigation -->
-    <div class="variant-label">2. Centered Navigation</div>
-    <pn-header id="header-centered" variant="centered" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-
-    <!-- 3. Mega Menu -->
-    <div class="variant-label">3. Mega Menu</div>
-    <pn-header id="header-mega" variant="mega-menu" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-
-    <!-- 4. Sticky + Shrinking (scroll to see effect) -->
-    <div class="variant-label">4. Sticky + Shrinking <small>(scroll page to see effect)</small></div>
-    <pn-header id="header-sticky" variant="sticky" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-
-    <!-- 5. Transparent → Solid (scroll to see effect) -->
-    <div class="variant-label">5. Transparent → Solid <small>(scroll page to see effect)</small></div>
-    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; margin-bottom: 0;">
-      <pn-header id="header-transparent" variant="transparent" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-    </div>
-
-    <!-- 6. Split (Two-Row) -->
-    <div class="variant-label">6. Split Header (Two-Row)</div>
-    <pn-header id="header-split" variant="split" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-
-    <!-- 7. Sidebar Navigation -->
-    <div class="variant-label">7. Sidebar Navigation</div>
-    <pn-header id="header-sidebar" variant="sidebar" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-
-    <!-- 8. Command Palette -->
-    <div class="variant-label">8. Command Palette</div>
-    <pn-header id="header-command" variant="command-palette" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
-    
-    <script>
-      const navigationData = [
-        {
-          label: 'Products',
-          children: [
-            {
-              label: 'Web Components',
-              children: [
-                { label: 'Buttons', href: '/components/buttons' },
-                { label: 'Forms', href: '/components/forms' },
-                { label: 'Navigation', href: '/components/navigation' }
-              ]
-            },
-            {
-              label: 'Design System',
-              children: [
-                { label: 'Tokens', href: '/design/tokens' },
-                { label: 'Typography', href: '/design/typography' },
-                { label: 'Colors', href: '/design/colors' }
-              ]
-            },
-            { label: 'Templates', href: '/templates' }
-          ]
-        },
-        {
-          label: 'Solutions',
-          children: [
-            {
-              label: 'Enterprise',
-              children: [
-                { label: 'Large Scale', href: '/enterprise/large-scale' },
-                { label: 'Security', href: '/enterprise/security' }
-              ]
-            },
-            { label: 'Startups', href: '/solutions/startups' },
-            { label: 'Agencies', href: '/solutions/agencies' }
-          ]
-        },
-        {
-          label: 'Resources',
-          children: [
-            { label: 'Documentation', href: '/docs', target: '_blank' },
-            { label: 'API Reference', href: '/api', target: '_blank' },
-            { label: 'Examples', href: '/examples' },
-            { label: 'Community', href: 'https://github.com/community', target: '_blank' }
-          ]
-        },
-        { label: 'Pricing', href: '/pricing' },
-        { label: 'Contact', href: '/contact' }
-      ];
-
-      const actionsData = [
-        { label: 'Log in', type: 'transparent', href: '/login', rounded: true },
-        { label: 'Sign up', type: 'transparent', href: '/signup', rounded: true }
-      ];
-
-      document.addEventListener('DOMContentLoaded', function() {
-        const ids = [
-          'header-default', 'header-centered', 'header-mega',
-          'header-sticky', 'header-transparent', 'header-split',
-          'header-sidebar', 'header-command'
-        ];
-        ids.forEach(function(id) {
-          var el = document.getElementById(id);
-          if (el) {
-            el.navigation = navigationData;
-            el.actions = actionsData;
-          }
-        });
-
-        // Utility links for split variant
-        var splitEl = document.getElementById('header-split');
-        if (splitEl) {
-          splitEl.utilityLinks = [
-            { label: 'Support', href: '/support' },
-            { label: 'Contact Sales', href: '/sales' },
-            { label: 'EN ▾', href: '#' }
-          ];
-        }
-      });
-    </script>
-    
     <button class="dark-toggle" onclick="document.documentElement.classList.toggle('dark')">
       🌙 Toggle Dark
     </button>
 
     <h1>UI Foundation - Component Library</h1>
-
-    <div class="section">
-      <h2>Header Component — 8 Variants</h2>
-      
-      <h3>Variants:</h3>
-      <ol>
-        <li><strong>Default</strong> — Logo left, nav + actions + search right-aligned</li>
-        <li><strong>Centered</strong> — Logo left, nav centered, actions + search right</li>
-        <li><strong>Mega Menu</strong> — Full-width dropdown panels with grid layout</li>
-        <li><strong>Sticky + Shrinking</strong> — Sticks to top, shrinks on scroll</li>
-        <li><strong>Transparent → Solid</strong> — Starts transparent, becomes solid on scroll</li>
-        <li><strong>Split (Two-Row)</strong> — Utility bar on top, main nav below</li>
-        <li><strong>Sidebar</strong> — Minimal header, full-height sidebar panel</li>
-        <li><strong>Command Palette</strong> — Prominent centered search bar</li>
-      </ol>
-      <p>All variants include action buttons (Log in, Sign up) and search functionality.</p>
-
-      <h3>Features:</h3>
-      <ul>
-        <li><strong>Multi-level Navigation:</strong> Supports up to 3 levels of nested menu items</li>
-        <li><strong>Mobile Responsive:</strong> Hamburger menu on screens smaller than 768px</li>
-        <li><strong>WCAG 2.1 AA Compliant:</strong> Keyboard navigation, ARIA attributes, focus management</li>
-        <li><strong>External Link Support:</strong> Icons and proper attributes for new tab links</li>
-        <li><strong>Dark Mode Compatible:</strong> Uses design tokens for consistent theming</li>
-      </ul>
-
-      <h3>Accessibility Testing:</h3>
-      <ul>
-        <li>Try using keyboard navigation (Tab, Enter, Space, Escape)</li>
-        <li>Test with screen readers - proper ARIA labels and roles</li>
-        <li>Check focus indicators are visible</li>
-        <li>Resize window to test mobile hamburger menu</li>
-      </ul>
-    </div>
 
     <div class="section">
       <h3>Link Components</h3>
@@ -1276,6 +1126,156 @@
           </ul>
         </div>
       </div>
+    </div>
+
+    <!-- Header Component — 8 Variants (moved to end) -->
+    <!-- 1. Default -->
+    <div class="variant-label">1. Default</div>
+    <pn-header id="header-default" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <!-- 2. Centered Navigation -->
+    <div class="variant-label">2. Centered Navigation</div>
+    <pn-header id="header-centered" variant="centered" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <!-- 3. Mega Menu -->
+    <div class="variant-label">3. Mega Menu</div>
+    <pn-header id="header-mega" variant="mega-menu" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <!-- 4. Sticky + Shrinking (scroll to see effect) -->
+    <div class="variant-label">4. Sticky + Shrinking <small>(scroll page to see effect)</small></div>
+    <pn-header id="header-sticky" variant="sticky" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <!-- 5. Transparent → Solid (scroll to see effect) -->
+    <div class="variant-label">5. Transparent → Solid <small>(scroll page to see effect)</small></div>
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; margin-bottom: 0;">
+      <pn-header id="header-transparent" variant="transparent" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+    </div>
+
+    <!-- 6. Split (Two-Row) -->
+    <div class="variant-label">6. Split Header (Two-Row)</div>
+    <pn-header id="header-split" variant="split" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <!-- 7. Sidebar Navigation -->
+    <div class="variant-label">7. Sidebar Navigation</div>
+    <pn-header id="header-sidebar" variant="sidebar" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <!-- 8. Command Palette -->
+    <div class="variant-label">8. Command Palette</div>
+    <pn-header id="header-command" variant="command-palette" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header>
+
+    <script>
+      const navigationData = [
+        {
+          label: 'Products',
+          children: [
+            {
+              label: 'Web Components',
+              children: [
+                { label: 'Buttons', href: '/components/buttons' },
+                { label: 'Forms', href: '/components/forms' },
+                { label: 'Navigation', href: '/components/navigation' }
+              ]
+            },
+            {
+              label: 'Design System',
+              children: [
+                { label: 'Tokens', href: '/design/tokens' },
+                { label: 'Typography', href: '/design/typography' },
+                { label: 'Colors', href: '/design/colors' }
+              ]
+            },
+            { label: 'Templates', href: '/templates' }
+          ]
+        },
+        {
+          label: 'Solutions',
+          children: [
+            {
+              label: 'Enterprise',
+              children: [
+                { label: 'Large Scale', href: '/enterprise/large-scale' },
+                { label: 'Security', href: '/enterprise/security' }
+              ]
+            },
+            { label: 'Startups', href: '/solutions/startups' },
+            { label: 'Agencies', href: '/solutions/agencies' }
+          ]
+        },
+        {
+          label: 'Resources',
+          children: [
+            { label: 'Documentation', href: '/docs', target: '_blank' },
+            { label: 'API Reference', href: '/api', target: '_blank' },
+            { label: 'Examples', href: '/examples' },
+            { label: 'Community', href: 'https://github.com/community', target: '_blank' }
+          ]
+        },
+        { label: 'Pricing', href: '/pricing' },
+        { label: 'Contact', href: '/contact' }
+      ];
+
+      const actionsData = [
+        { label: 'Log in', type: 'transparent', href: '/login', rounded: true },
+        { label: 'Sign up', type: 'transparent', href: '/signup', rounded: true }
+      ];
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const ids = [
+          'header-default', 'header-centered', 'header-mega',
+          'header-sticky', 'header-transparent', 'header-split',
+          'header-sidebar', 'header-command'
+        ];
+        ids.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) {
+            el.navigation = navigationData;
+            el.actions = actionsData;
+          }
+        });
+
+        var splitEl = document.getElementById('header-split');
+        if (splitEl) {
+          splitEl.utilityLinks = [
+            { label: 'Support', href: '/support' },
+            { label: 'Contact Sales', href: '/sales' },
+            { label: 'EN ▾', href: '#' }
+          ];
+        }
+      });
+    </script>
+
+    <div class="section">
+      <h2>Header Component — 8 Variants</h2>
+      
+      <h3>Variants:</h3>
+      <ol>
+        <li><strong>Default</strong> — Logo left, nav + actions + search right-aligned</li>
+        <li><strong>Centered</strong> — Logo left, nav centered, actions + search right</li>
+        <li><strong>Mega Menu</strong> — Full-width dropdown panels with grid layout</li>
+        <li><strong>Sticky + Shrinking</strong> — Sticks to top, shrinks on scroll</li>
+        <li><strong>Transparent → Solid</strong> — Starts transparent, becomes solid on scroll</li>
+        <li><strong>Split (Two-Row)</strong> — Utility bar on top, main nav below</li>
+        <li><strong>Sidebar</strong> — Minimal header, full-height sidebar panel</li>
+        <li><strong>Command Palette</strong> — Prominent centered search bar</li>
+      </ol>
+      <p>All variants include action buttons (Log in, Sign up) and search functionality.</p>
+
+      <h3>Features:</h3>
+      <ul>
+        <li><strong>Multi-level Navigation:</strong> Supports up to 3 levels of nested menu items</li>
+        <li><strong>Mobile Responsive:</strong> Hamburger menu on screens smaller than 768px</li>
+        <li><strong>WCAG 2.1 AA Compliant:</strong> Keyboard navigation, ARIA attributes, focus management</li>
+        <li><strong>External Link Support:</strong> Icons and proper attributes for new tab links</li>
+        <li><strong>Dark Mode Compatible:</strong> Uses design tokens for consistent theming</li>
+      </ul>
+
+      <h3>Accessibility Testing:</h3>
+      <ul>
+        <li>Try using keyboard navigation (Tab, Enter, Space, Escape)</li>
+        <li>Test with screen readers - proper ARIA labels and roles</li>
+        <li>Check focus indicators are visible</li>
+        <li>Resize window to test mobile hamburger menu</li>
+      </ul>
     </div>
 
   </body>
