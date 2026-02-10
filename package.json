@@ -56,13 +56,15 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "deploy": "npm run build && sed -i '' 's|href=\"/|href=\"./|g;s|src=\"/|src=\"./|g;s|url(\"/|url(\"./|g;s|data-resources-url=\"/|data-resources-url=\"./|g' www/index.html && gh-pages -d www"
   },
   "devDependencies": {
     "@stencil/core": "^4.27.1",
     "@stencil/sass": "^3.2.3",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.5",
+    "gh-pages": "^6.3.0",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
     "puppeteer": "^24.3.0"
