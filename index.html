@@ -1,0 +1,387 @@
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>UI Foundation - Component Library</title> <!-- Font Awesome from node_modules --> <link rel="stylesheet" href="./fontawesome/css/all.min.css"> <link rel="modulepreload" href="./build/p-98e3958b.js"><link rel="modulepreload" href="./build/p-DVGHYfWf.js"><script type="module" src="./build/p-98e3958b.js" data-stencil data-resources-url="./build/" data-stencil-namespace="ui-foundation"></script> <script nomodule="" src="./build/ui-foundation.js" data-stencil></script> <style>body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding: 2rem;
+        line-height: 1.6;
+        color: #374151;
+      }
+      .dark body { 
+        color: #FFF;
+      }
+      
+      .section {
+        margin: 2rem 0;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+      }
+      
+      .section h3 {
+        margin-top: 0;
+      }
+      
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 1rem 0;
+      }
+      
+      .dark-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10000;
+      }
+
+      .variant-label {
+        background: #f0f4ff;
+        color: #3b52a0;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.4rem 1.5rem;
+        border-left: 3px solid var(--color-primary, #3b82f6);
+        margin-top: 2rem;
+      }
+
+      .variant-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .variant-label small {
+        text-transform: none;
+        font-weight: 400;
+        opacity: 0.7;
+        letter-spacing: 0;
+      }</style> </head> <body> <!-- 1. Default --> <div class="variant-label">1. Default</div> <pn-header id="header-default" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <!-- 2. Centered Navigation --> <div class="variant-label">2. Centered Navigation</div> <pn-header id="header-centered" variant="centered" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <!-- 3. Mega Menu --> <div class="variant-label">3. Mega Menu</div> <pn-header id="header-mega" variant="mega-menu" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <!-- 4. Sticky + Shrinking (scroll to see effect) --> <div class="variant-label">4. Sticky + Shrinking <small>(scroll page to see effect)</small></div> <pn-header id="header-sticky" variant="sticky" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <!-- 5. Transparent → Solid (scroll to see effect) --> <div class="variant-label">5. Transparent → Solid <small>(scroll page to see effect)</small></div> <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; margin-bottom: 0;"> <pn-header id="header-transparent" variant="transparent" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> </div> <!-- 6. Split (Two-Row) --> <div class="variant-label">6. Split Header (Two-Row)</div> <pn-header id="header-split" variant="split" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <!-- 7. Sidebar Navigation --> <div class="variant-label">7. Sidebar Navigation</div> <pn-header id="header-sidebar" variant="sidebar" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <!-- 8. Command Palette --> <div class="variant-label">8. Command Palette</div> <pn-header id="header-command" variant="command-palette" logo="/images/logo_PN.png" logo-alt-text="PN Logo" company="UI Foundation" show-search="true"></pn-header> <script>
+      const navigationData = [
+        {
+          label: 'Products',
+          children: [
+            {
+              label: 'Web Components',
+              children: [
+                { label: 'Buttons', href: '/components/buttons' },
+                { label: 'Forms', href: '/components/forms' },
+                { label: 'Navigation', href: '/components/navigation' }
+              ]
+            },
+            {
+              label: 'Design System',
+              children: [
+                { label: 'Tokens', href: '/design/tokens' },
+                { label: 'Typography', href: '/design/typography' },
+                { label: 'Colors', href: '/design/colors' }
+              ]
+            },
+            { label: 'Templates', href: '/templates' }
+          ]
+        },
+        {
+          label: 'Solutions',
+          children: [
+            {
+              label: 'Enterprise',
+              children: [
+                { label: 'Large Scale', href: '/enterprise/large-scale' },
+                { label: 'Security', href: '/enterprise/security' }
+              ]
+            },
+            { label: 'Startups', href: '/solutions/startups' },
+            { label: 'Agencies', href: '/solutions/agencies' }
+          ]
+        },
+        {
+          label: 'Resources',
+          children: [
+            { label: 'Documentation', href: '/docs', target: '_blank' },
+            { label: 'API Reference', href: '/api', target: '_blank' },
+            { label: 'Examples', href: '/examples' },
+            { label: 'Community', href: 'https://github.com/community', target: '_blank' }
+          ]
+        },
+        { label: 'Pricing', href: '/pricing' },
+        { label: 'Contact', href: '/contact' }
+      ];
+
+      const actionsData = [
+        { label: 'Log in', type: 'transparent', href: '/login', rounded: true },
+        { label: 'Sign up', type: 'transparent', href: '/signup', rounded: true }
+      ];
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const ids = [
+          'header-default', 'header-centered', 'header-mega',
+          'header-sticky', 'header-transparent', 'header-split',
+          'header-sidebar', 'header-command'
+        ];
+        ids.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) {
+            el.navigation = navigationData;
+            el.actions = actionsData;
+          }
+        });
+
+        // Utility links for split variant
+        var splitEl = document.getElementById('header-split');
+        if (splitEl) {
+          splitEl.utilityLinks = [
+            { label: 'Support', href: '/support' },
+            { label: 'Contact Sales', href: '/sales' },
+            { label: 'EN ▾', href: '#' }
+          ];
+        }
+      });
+    </script> <button class="dark-toggle" onclick="document.documentElement.classList.toggle('dark')"> 🌙 Toggle Dark </button> <h1>UI Foundation - Component Library</h1> <div class="section"> <h2>Header Component — 8 Variants</h2> <h3>Variants:</h3> <ol> <li><strong>Default</strong> — Logo left, nav + actions + search right-aligned</li> <li><strong>Centered</strong> — Logo left, nav centered, actions + search right</li> <li><strong>Mega Menu</strong> — Full-width dropdown panels with grid layout</li> <li><strong>Sticky + Shrinking</strong> — Sticks to top, shrinks on scroll</li> <li><strong>Transparent → Solid</strong> — Starts transparent, becomes solid on scroll</li> <li><strong>Split (Two-Row)</strong> — Utility bar on top, main nav below</li> <li><strong>Sidebar</strong> — Minimal header, full-height sidebar panel</li> <li><strong>Command Palette</strong> — Prominent centered search bar</li> </ol> <p>All variants include action buttons (Log in, Sign up) and search functionality.</p> <h3>Features:</h3> <ul> <li><strong>Multi-level Navigation:</strong> Supports up to 3 levels of nested menu items</li> <li><strong>Mobile Responsive:</strong> Hamburger menu on screens smaller than 768px</li> <li><strong>WCAG 2.1 AA Compliant:</strong> Keyboard navigation, ARIA attributes, focus management</li> <li><strong>External Link Support:</strong> Icons and proper attributes for new tab links</li> <li><strong>Dark Mode Compatible:</strong> Uses design tokens for consistent theming</li> </ul> <h3>Accessibility Testing:</h3> <ul> <li>Try using keyboard navigation (Tab, Enter, Space, Escape)</li> <li>Test with screen readers - proper ARIA labels and roles</li> <li>Check focus indicators are visible</li> <li>Resize window to test mobile hamburger menu</li> </ul> </div> <div class="section"> <h3>Link Components</h3> <div class="button-group"> <pn-link text="Internal Link" href="#internal"></pn-link> <pn-link text="External Link" href="https://example.com" new-tab=""></pn-link> <pn-link text="Documentation" href="https://stenciljs.com" new-tab=""></pn-link> <pn-link text="GitHub Repository" href="https://github.com" new-tab=""></pn-link> </div> <h4>Link Variations</h4> <p>Regular link: <pn-link text="About Us" href="./about"></pn-link></p> <p>External link: <pn-link text="Visit Google" href="https://google.com" new-tab=""></pn-link></p> <p>External documentation: <pn-link text="MDN Web Docs" href="https://developer.mozilla.org" new-tab=""></pn-link></p> </div> <div class="section"> <h3>Basic Buttons</h3> <div class="button-group"> <pn-button label="Primary"></pn-button> <pn-button type="reverse" label="Reverse"></pn-button> <pn-button type="secondary" label="Secondary"></pn-button> <pn-button type="tertiary" label="Tertiary"></pn-button> <pn-button type="transparent" label="Transparent"></pn-button> <pn-button type="disabled" label="Disabled"></pn-button> </div> </div> <div class="section"> <h3>Button Variations</h3> <div class="button-group"> <pn-button type="primary" label="Rounded Primary" rounded="true"></pn-button> <pn-button type="primary" label="Primary Shadow" shadow="true"></pn-button> <pn-button type="secondary" label="Secondary Shadow" shadow="true"></pn-button> <pn-button type="transparent" label="Transparent Shadow" shadow="true"></pn-button> <pn-button type="primary" label="Rounded + Shadow" rounded="true" shadow="true"></pn-button> </div> </div> <div class="section"> <h3>Icons with Text - Left Side</h3> <div class="button-group"> <pn-button type="primary" label="Save" icon-left="fas fa-save"></pn-button> <pn-button type="secondary" label="Download" icon-left="fas fa-download"></pn-button> <pn-button type="tertiary" label="Settings" icon-left="fas fa-cog"></pn-button> <pn-button type="transparent" label="Edit" icon-left="fas fa-edit"></pn-button> <pn-button type="primary" label="Upload" icon-left="fas fa-upload" rounded="true"></pn-button> </div> </div> <div class="section"> <h3>Icons with Text - Right Side</h3> <div class="button-group"> <pn-button type="primary" label="Next" icon-right="fas fa-arrow-right"></pn-button> <pn-button type="secondary" label="Send" icon-right="fas fa-paper-plane"></pn-button> <pn-button type="tertiary" label="External Link" icon-right="fas fa-external-link-alt"></pn-button> <pn-button type="primary" label="Continue" icon-right="fas fa-chevron-right" shadow="true"></pn-button> </div> </div> <!-- Input Components Demo Section --> <div class="section"> <h3>Input Components</h3> <div style="display: grid; gap: 2rem; margin: 1rem 0;"> <div> <h4>Basic Text Inputs</h4> <div style="display: grid; gap: 1rem; max-width: 400px;"> <pn-input label="Full Name" placeholder="Enter your full name" required="true"></pn-input> <pn-input label="Description" placeholder="Optional description"></pn-input> </div> </div> <div> <h4>Input Types</h4> <div style="display: grid; gap: 1rem; max-width: 400px;"> <pn-input label="Email Address" type="email" placeholder="you@example.com" icon-left="fas fa-envelope" required="true"></pn-input> <pn-input label="Password" type="password" placeholder="Enter password" icon-left="fas fa-lock" required="true"></pn-input> <pn-input label="Phone Number" type="tel" placeholder="+1 (555) 000-0000" icon-left="fas fa-phone"></pn-input> <pn-input label="Age" type="number" placeholder="25" min="18" max="120" icon-left="fas fa-user"></pn-input> <pn-input label="Website URL" type="url" placeholder="https://example.com" icon-left="fas fa-globe"></pn-input> </div> </div> <div> <h4>Search Inputs</h4> <div style="display: grid; gap: 1rem; max-width: 400px;"> <pn-input label="Search Products" type="search" placeholder="Search..." icon-right="fas fa-search"></pn-input> <pn-input label="Find User" type="search" placeholder="Enter username" icon-left="fas fa-user" icon-right="fas fa-search"></pn-input> </div> </div> <div> <h4>Input States</h4> <div style="display: grid; gap: 1rem; max-width: 400px;"> <pn-input label="Valid Email" type="email" value="user@example.com" icon-left="fas fa-envelope"></pn-input> <pn-input label="Invalid Email" type="email" value="invalid-email" error="true" error-message="Please enter a valid email address" icon-left="fas fa-envelope"></pn-input> <pn-input label="Read-only Field" value="This cannot be changed" readonly="true" icon-left="fas fa-lock"></pn-input> <pn-input label="Disabled Field" placeholder="This field is disabled" disabled="true" icon-left="fas fa-ban"></pn-input> </div> </div> <div> <h4>Icon Variations</h4> <div style="display: grid; gap: 1rem; max-width: 400px;"> <pn-input label="Username" placeholder="Enter username" icon-left="fas fa-user"></pn-input> <pn-input label="Search Query" placeholder="Type to search..." icon-right="fas fa-search"></pn-input> <pn-input label="Amount" type="number" placeholder="0.00" icon-left="fas fa-dollar-sign" icon-right="fas fa-calculator"></pn-input> </div> </div> <div> <h4>Form Validation Example</h4> <div style="display: grid; gap: 1rem; max-width: 400px;"> <pn-input label="First Name" placeholder="John" required="true" icon-left="fas fa-user"></pn-input> <pn-input label="Last Name" placeholder="Doe" required="true" icon-left="fas fa-user"></pn-input> <pn-input label="Company Email" type="email" placeholder="john.doe@company.com" required="true" icon-left="fas fa-envelope"></pn-input> <pn-input label="Phone" type="tel" placeholder="+1 (555) 123-4567" icon-left="fas fa-phone"></pn-input> <pn-input label="Company Website" type="url" placeholder="https://company.com" icon-left="fas fa-globe"></pn-input> </div> </div> </div> </div> <!-- Dropdown Component Demo Section --> <div class="section"> <h2>Dropdown Component</h2> <div style="display: grid; gap: 2rem; margin: 1rem 0;"> <!-- 1. Basic Dropdown --> <div> <h4>1. Basic Dropdown</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-basic" label="Country" placeholder="Choose a country" required="true"></pn-dropdown> </div> </div> <!-- 2. Typeahead Dropdown --> <div> <h4>2. Typeahead / Autocomplete</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-typeahead" label="Programming Language" placeholder="Start typing to search..." typeahead="true" clearable="true"></pn-dropdown> </div> </div> <!-- 3. Grouped Options --> <div> <h4>3. Grouped Options with Typeahead</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-grouped" label="Choose a Framework" placeholder="Search frameworks..." typeahead="true" clearable="true"></pn-dropdown> </div> </div> <!-- 4. Pre-selected Value --> <div> <h4>4. Pre-selected Value</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-preselected" label="Status" value="active"></pn-dropdown> </div> </div> <!-- 5. Error State --> <div> <h4>5. Error State</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-error" label="Department" placeholder="Select department" required="true" error="true" error-message="Please select a department to continue."></pn-dropdown> </div> </div> <!-- 6. Disabled --> <div> <h4>6. Disabled</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-disabled" label="Role" value="viewer" disabled="true"></pn-dropdown> </div> </div> <!-- 7. Clearable with many options --> <div> <h4>7. Large List — Clearable + Typeahead</h4> <div style="max-width: 340px;"> <pn-dropdown id="dd-large" label="Select a City" placeholder="Type to filter cities..." typeahead="true" clearable="true"></pn-dropdown> </div> </div> </div> </div> <script>
+      customElements.whenDefined('pn-dropdown').then(function () {
+        // 1. Basic
+        document.getElementById('dd-basic').options = [
+          { label: 'United States', value: 'us' },
+          { label: 'United Kingdom', value: 'uk' },
+          { label: 'Canada', value: 'ca' },
+          { label: 'Australia', value: 'au' },
+          { label: 'Germany', value: 'de' },
+          { label: 'France', value: 'fr' },
+          { label: 'Japan', value: 'jp' },
+          { label: 'India', value: 'in' },
+        ];
+
+        // 2. Typeahead
+        document.getElementById('dd-typeahead').options = [
+          { label: 'JavaScript', value: 'js' },
+          { label: 'TypeScript', value: 'ts' },
+          { label: 'Python', value: 'py' },
+          { label: 'Rust', value: 'rs' },
+          { label: 'Go', value: 'go' },
+          { label: 'Java', value: 'java' },
+          { label: 'C#', value: 'csharp' },
+          { label: 'C++', value: 'cpp' },
+          { label: 'Ruby', value: 'rb' },
+          { label: 'Swift', value: 'swift' },
+          { label: 'Kotlin', value: 'kotlin' },
+          { label: 'PHP', value: 'php' },
+        ];
+
+        // 3. Grouped
+        document.getElementById('dd-grouped').options = [
+          { label: 'React', value: 'react', group: 'Frontend' },
+          { label: 'Vue', value: 'vue', group: 'Frontend' },
+          { label: 'Angular', value: 'angular', group: 'Frontend' },
+          { label: 'Svelte', value: 'svelte', group: 'Frontend' },
+          { label: 'Express', value: 'express', group: 'Backend' },
+          { label: 'NestJS', value: 'nestjs', group: 'Backend' },
+          { label: 'Django', value: 'django', group: 'Backend' },
+          { label: 'FastAPI', value: 'fastapi', group: 'Backend' },
+          { label: 'React Native', value: 'react-native', group: 'Mobile' },
+          { label: 'Flutter', value: 'flutter', group: 'Mobile' },
+          { label: 'SwiftUI', value: 'swiftui', group: 'Mobile' },
+        ];
+
+        // 4. Pre-selected
+        document.getElementById('dd-preselected').options = [
+          { label: 'Active', value: 'active' },
+          { label: 'Inactive', value: 'inactive' },
+          { label: 'Pending', value: 'pending' },
+          { label: 'Archived', value: 'archived', disabled: true },
+        ];
+
+        // 5. Error
+        document.getElementById('dd-error').options = [
+          { label: 'Engineering', value: 'eng' },
+          { label: 'Design', value: 'design' },
+          { label: 'Marketing', value: 'marketing' },
+          { label: 'Sales', value: 'sales' },
+          { label: 'Human Resources', value: 'hr' },
+        ];
+
+        // 6. Disabled
+        document.getElementById('dd-disabled').options = [
+          { label: 'Admin', value: 'admin' },
+          { label: 'Editor', value: 'editor' },
+          { label: 'Viewer', value: 'viewer' },
+        ];
+
+        // 7. Large list
+        document.getElementById('dd-large').options = [
+          { label: 'New York', value: 'nyc' },
+          { label: 'Los Angeles', value: 'la' },
+          { label: 'Chicago', value: 'chi' },
+          { label: 'Houston', value: 'hou' },
+          { label: 'Phoenix', value: 'phx' },
+          { label: 'San Francisco', value: 'sf' },
+          { label: 'Seattle', value: 'sea' },
+          { label: 'Denver', value: 'den' },
+          { label: 'Miami', value: 'mia' },
+          { label: 'Boston', value: 'bos' },
+          { label: 'Atlanta', value: 'atl' },
+          { label: 'Dallas', value: 'dal' },
+          { label: 'Portland', value: 'pdx' },
+          { label: 'Nashville', value: 'nas' },
+          { label: 'Austin', value: 'aus' },
+          { label: 'San Diego', value: 'sd' },
+          { label: 'Minneapolis', value: 'mpls' },
+          { label: 'Detroit', value: 'det' },
+          { label: 'Charlotte', value: 'clt' },
+          { label: 'Las Vegas', value: 'lv' },
+        ];
+
+        // Listen for changes (demo)
+        document.querySelectorAll('pn-dropdown').forEach(function (dd) {
+          dd.addEventListener('pnChange', function (e) {
+            console.log('Dropdown changed:', e.detail);
+          });
+        });
+      });
+    </script> <div class="section"> <h3>Icon-Only Buttons</h3> <div class="button-group"> <pn-button type="primary" icon-left="fas fa-heart" icon-only="true"></pn-button> <pn-button type="secondary" icon-left="fas fa-star" icon-only="true"></pn-button> <pn-button type="tertiary" icon-left="fas fa-bell" icon-only="true"></pn-button> <pn-button type="transparent" icon-left="fas fa-plus" icon-only="true"></pn-button> <pn-button type="primary" icon-left="fas fa-user" icon-only="true" rounded="true"></pn-button> <pn-button type="secondary" icon-left="fas fa-search" icon-only="true" shadow="true"></pn-button> </div> </div> <div class="section"> <h3>Complex Icon Combinations</h3> <div class="button-group"> <pn-button type="primary" label="Save &amp; Exit" icon-left="fas fa-save" icon-right="fas fa-sign-out-alt"></pn-button> <pn-button type="secondary" label="Copy Link" icon-left="fas fa-copy" icon-right="fas fa-link" rounded="true" shadow="true"></pn-button> <pn-button type="tertiary" label="Import File" icon-left="fas fa-file-import" icon-right="fas fa-chevron-down"></pn-button> </div> </div> <div class="section"> <h3>Action Buttons</h3> <div class="button-group"> <pn-button type="primary" label="Create New" icon-left="fas fa-plus" shadow="true"></pn-button> <pn-button type="secondary" label="Edit" icon-left="fas fa-edit"></pn-button> <pn-button type="tertiary" label="Delete" icon-left="fas fa-trash"></pn-button> <pn-button type="primary" label="Refresh" icon-left="fas fa-sync-alt" rounded="true"></pn-button> </div> </div> <div class="section"> <h3>Social &amp; Communication</h3> <div class="button-group"> <pn-button type="primary" label="Share" icon-left="fas fa-share-alt"></pn-button> <pn-button type="secondary" label="Comment" icon-left="fas fa-comment"></pn-button> <pn-button type="tertiary" label="Like" icon-left="fas fa-thumbs-up"></pn-button> <pn-button type="primary" icon-left="fab fa-twitter" icon-only="true" rounded="true" shadow="true"></pn-button> <pn-button type="secondary" icon-left="fab fa-facebook" icon-only="true" rounded="true" shadow="true"></pn-button> </div> </div> <!-- ================================================== --> <!-- CHECKBOX COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Checkbox Component</h2> <div style="display: grid; gap: 1.5rem; max-width: 400px;"> <h4>Basic Checkboxes</h4> <pn-checkbox label="Accept terms and conditions" required="true"></pn-checkbox> <pn-checkbox label="Remember me" checked="true"></pn-checkbox> <pn-checkbox label="Subscribe to newsletter"></pn-checkbox> <h4>Indeterminate State</h4> <pn-checkbox id="cb-parent" label="Select all items"></pn-checkbox> <div style="margin-left: 1.5rem; display: grid; gap: 0.5rem;"> <pn-checkbox label="Item A" checked="true"></pn-checkbox> <pn-checkbox label="Item B"></pn-checkbox> <pn-checkbox label="Item C" checked="true"></pn-checkbox> </div> <h4>States</h4> <pn-checkbox label="Disabled checkbox" disabled="true"></pn-checkbox> <pn-checkbox label="Disabled checked" disabled="true" checked="true"></pn-checkbox> <pn-checkbox label="Error state" error="true" error-message="You must accept the terms"></pn-checkbox> </div> </div> <script>
+      customElements.whenDefined('pn-checkbox').then(function() {
+        var parent = document.getElementById('cb-parent');
+        if (parent) {
+          parent.indeterminate = true;
+        }
+      });
+    </script> <!-- ================================================== --> <!-- RADIO COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Radio Button Component</h2> <div style="display: grid; gap: 2rem; max-width: 400px;"> <div> <h4>Vertical Radio Group</h4> <pn-radio id="radio-plan" label="Subscription Plan" name="plan" required="true"></pn-radio> </div> <div> <h4>Inline Radio Group</h4> <pn-radio id="radio-size" label="Size" name="size" inline="true"></pn-radio> </div> <div> <h4>Error State</h4> <pn-radio id="radio-priority" label="Priority Level" name="priority" error="true" error-message="Please select a priority"></pn-radio> </div> </div> </div> <script>
+      customElements.whenDefined('pn-radio').then(function() {
+        document.getElementById('radio-plan').options = [
+          { label: 'Free — Basic features', value: 'free' },
+          { label: 'Pro — Advanced features', value: 'pro' },
+          { label: 'Enterprise — Full suite', value: 'enterprise' },
+          { label: 'Legacy (unavailable)', value: 'legacy', disabled: true },
+        ];
+        document.getElementById('radio-size').options = [
+          { label: 'S', value: 's' },
+          { label: 'M', value: 'm' },
+          { label: 'L', value: 'l' },
+          { label: 'XL', value: 'xl' },
+        ];
+        document.getElementById('radio-priority').options = [
+          { label: 'Low', value: 'low' },
+          { label: 'Medium', value: 'medium' },
+          { label: 'High', value: 'high' },
+          { label: 'Critical', value: 'critical' },
+        ];
+      });
+    </script> <!-- ================================================== --> <!-- TOGGLE COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Toggle/Switch Component</h2> <div style="display: grid; gap: 1.5rem; max-width: 400px;"> <h4>Basic Toggles</h4> <pn-toggle label="Enable notifications" checked="true"></pn-toggle> <pn-toggle label="Dark mode"></pn-toggle> <pn-toggle label="Auto-save" checked="true"></pn-toggle> <h4>Sizes</h4> <pn-toggle label="Small toggle" size="small"></pn-toggle> <pn-toggle label="Medium toggle (default)" size="medium" checked="true"></pn-toggle> <pn-toggle label="Large toggle" size="large"></pn-toggle> <h4>Label Position</h4> <pn-toggle label="Label on left" label-position="left"></pn-toggle> <pn-toggle label="Label on right" label-position="right" checked="true"></pn-toggle> <h4>Disabled</h4> <pn-toggle label="Disabled off" disabled="true"></pn-toggle> <pn-toggle label="Disabled on" disabled="true" checked="true"></pn-toggle> </div> </div> <!-- ================================================== --> <!-- TEXTAREA COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Textarea Component</h2> <div style="display: grid; gap: 1.5rem; max-width: 500px;"> <pn-textarea label="Description" placeholder="Enter a detailed description..." rows="4"></pn-textarea> <pn-textarea label="Bio" placeholder="Tell us about yourself" rows="3" show-count="true" maxlength="280" required="true"></pn-textarea> <pn-textarea label="Notes" placeholder="Add notes..." resize="none"></pn-textarea> <pn-textarea label="Feedback" value="This is pre-filled content" readonly="true"></pn-textarea> <pn-textarea label="Comments" placeholder="Write a comment..." error="true" error-message="Comment is too short (min 20 characters)"></pn-textarea> <pn-textarea label="Disabled" placeholder="Cannot edit" disabled="true"></pn-textarea> </div> </div> <!-- ================================================== --> <!-- FORM FIELD COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Form Field Component</h2> <div style="display: grid; gap: 1.5rem; max-width: 400px;"> <pn-form-field label="Email Address" required="true" hint="We'll never share your email with anyone."> <pn-input type="email" placeholder="you@example.com" icon-left="fas fa-envelope"></pn-input> </pn-form-field> <pn-form-field label="Department" error="true" error-message="Please select a department"> <pn-dropdown id="ff-dropdown" placeholder="Choose department"></pn-dropdown> </pn-form-field> <pn-form-field label="Inline Field" inline="true"> <pn-input placeholder="Inline layout"></pn-input> </pn-form-field> </div> </div> <script>
+      customElements.whenDefined('pn-dropdown').then(function() {
+        var ffDd = document.getElementById('ff-dropdown');
+        if (ffDd) {
+          ffDd.options = [
+            { label: 'Engineering', value: 'eng' },
+            { label: 'Design', value: 'design' },
+            { label: 'Marketing', value: 'marketing' },
+          ];
+        }
+      });
+    </script> <!-- ================================================== --> <!-- MODAL COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Modal/Dialog Component</h2> <div class="button-group"> <pn-button label="Open Small Modal" type="primary" id="btn-modal-sm"></pn-button> <pn-button label="Open Medium Modal" type="secondary" id="btn-modal-md"></pn-button> <pn-button label="Open Large Modal" type="tertiary" id="btn-modal-lg"></pn-button> </div> <pn-modal id="modal-sm" modal-title="Small Modal" size="small"> <p>This is a small modal dialog. It's perfect for confirmations and simple messages.</p> <div slot="footer"> <pn-button label="Cancel" type="transparent" id="modal-sm-cancel"></pn-button> <pn-button label="Confirm" type="primary"></pn-button> </div> </pn-modal> <pn-modal id="modal-md" modal-title="Edit Profile" size="medium"> <div style="display: grid; gap: 1rem;"> <pn-input label="Full Name" placeholder="John Doe" icon-left="fas fa-user"></pn-input> <pn-input label="Email" type="email" placeholder="john@example.com" icon-left="fas fa-envelope"></pn-input> <pn-textarea label="Bio" placeholder="Tell us about yourself" rows="3"></pn-textarea> </div> <div slot="footer"> <pn-button label="Cancel" type="transparent" id="modal-md-cancel"></pn-button> <pn-button label="Save Changes" type="primary"></pn-button> </div> </pn-modal> <pn-modal id="modal-lg" modal-title="Terms &amp; Conditions" size="large"> <h4>1. Introduction</h4> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p> <h4>2. Usage</h4> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p> <h4>3. Privacy</h4> <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p> <div slot="footer"> <pn-button label="Decline" type="transparent" id="modal-lg-cancel"></pn-button> <pn-button label="Accept" type="primary"></pn-button> </div> </pn-modal> </div> <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var btnSm = document.getElementById('btn-modal-sm');
+        var btnMd = document.getElementById('btn-modal-md');
+        var btnLg = document.getElementById('btn-modal-lg');
+
+        if (btnSm) btnSm.addEventListener('click', function() { document.getElementById('modal-sm').show(); });
+        if (btnMd) btnMd.addEventListener('click', function() { document.getElementById('modal-md').show(); });
+        if (btnLg) btnLg.addEventListener('click', function() { document.getElementById('modal-lg').show(); });
+
+        var cancelSm = document.getElementById('modal-sm-cancel');
+        var cancelMd = document.getElementById('modal-md-cancel');
+        var cancelLg = document.getElementById('modal-lg-cancel');
+
+        if (cancelSm) cancelSm.addEventListener('click', function() { document.getElementById('modal-sm').close(); });
+        if (cancelMd) cancelMd.addEventListener('click', function() { document.getElementById('modal-md').close(); });
+        if (cancelLg) cancelLg.addEventListener('click', function() { document.getElementById('modal-lg').close(); });
+      });
+    </script> <!-- ================================================== --> <!-- TOAST COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Toast Notifications</h2> <pn-toast id="toast-container" position="top-right"></pn-toast> <div class="button-group"> <pn-button label="Success Toast" type="primary" id="btn-toast-success" icon-left="fas fa-check"></pn-button> <pn-button label="Error Toast" type="secondary" id="btn-toast-error" icon-left="fas fa-times"></pn-button> <pn-button label="Warning Toast" type="tertiary" id="btn-toast-warning" icon-left="fas fa-exclamation-triangle"></pn-button> <pn-button label="Info Toast" type="transparent" id="btn-toast-info" icon-left="fas fa-info-circle"></pn-button> </div> </div> <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var toastEl = document.getElementById('toast-container');
+        document.getElementById('btn-toast-success').addEventListener('click', function() {
+          toastEl.addToast({ message: 'Your changes have been saved successfully!', type: 'success' });
+        });
+        document.getElementById('btn-toast-error').addEventListener('click', function() {
+          toastEl.addToast({ message: 'Failed to save. Please try again.', type: 'error', duration: 8000 });
+        });
+        document.getElementById('btn-toast-warning').addEventListener('click', function() {
+          toastEl.addToast({ message: 'Your session will expire in 5 minutes.', type: 'warning' });
+        });
+        document.getElementById('btn-toast-info').addEventListener('click', function() {
+          toastEl.addToast({ message: 'A new version of the app is available.', type: 'info' });
+        });
+      });
+    </script> <!-- ================================================== --> <!-- TOOLTIP COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Tooltip Component</h2> <div class="button-group"> <pn-tooltip text="This is a top tooltip" position="top"> <pn-button label="Top" type="primary"></pn-button> </pn-tooltip> <pn-tooltip text="Bottom tooltip here" position="bottom"> <pn-button label="Bottom" type="secondary"></pn-button> </pn-tooltip> <pn-tooltip text="Left side tooltip" position="left"> <pn-button label="Left" type="tertiary"></pn-button> </pn-tooltip> <pn-tooltip text="Right side tooltip" position="right"> <pn-button label="Right" type="transparent"></pn-button> </pn-tooltip> </div> <p style="margin-top: 1rem;"> Hover or focus on the buttons above to see tooltips. Also works with any element: <pn-tooltip text="Helpful information about this term" position="top"> <span style="text-decoration: underline dotted; cursor: help;">hover this text</span> </pn-tooltip> </p> </div> <!-- ================================================== --> <!-- ALERT COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Alert/Banner Component</h2> <div style="display: grid; gap: 1rem;"> <pn-alert type="success" alert-title="Success!" dismissible="true"> Your changes have been saved and deployed successfully. </pn-alert> <pn-alert type="error" alert-title="Error"> Unable to connect to the server. Please check your network connection and try again. </pn-alert> <pn-alert type="warning" alert-title="Warning" dismissible="true"> Your trial expires in 3 days. Upgrade to keep your data. </pn-alert> <pn-alert type="info"> A system maintenance is scheduled for Saturday at 2:00 AM UTC. </pn-alert> <pn-alert type="info" icon="false"> This is an alert without an icon, just plain text content. </pn-alert> </div> </div> <!-- ================================================== --> <!-- SPINNER COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Spinner/Loading Component</h2> <div style="display: grid; gap: 2rem;"> <div> <h4>Spinner Sizes</h4> <div class="button-group"> <pn-spinner size="small"></pn-spinner> <pn-spinner size="medium"></pn-spinner> <pn-spinner size="large"></pn-spinner> </div> </div> <div> <h4>Dots Loading</h4> <div class="button-group"> <pn-spinner type="dots" size="small"></pn-spinner> <pn-spinner type="dots" size="medium"></pn-spinner> <pn-spinner type="dots" size="large"></pn-spinner> </div> </div> <div> <h4>Skeleton Loader</h4> <div style="max-width: 400px; display: grid; gap: 1rem;"> <pn-spinner type="skeleton" skeleton-lines="1" skeleton-height="2rem" skeleton-radius="8px"></pn-spinner> <pn-spinner type="skeleton" skeleton-lines="3" skeleton-height="0.875rem"></pn-spinner> <div style="display: flex; gap: 1rem;"> <pn-spinner type="skeleton" skeleton-width="4rem" skeleton-height="4rem" skeleton-radius="50%"></pn-spinner> <div style="flex: 1;"> <pn-spinner type="skeleton" skeleton-lines="2" skeleton-height="0.875rem"></pn-spinner> </div> </div> </div> </div> </div> </div> <!-- ================================================== --> <!-- CARD COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Card Component</h2> <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;"> <pn-card card-title="Default Card" subtitle="Basic card with border" variant="default"> <p>This is the card body content. Cards support header, body, and footer slots.</p> <div slot="footer"> <pn-button label="Learn More" type="transparent" rounded="true"></pn-button> </div> </pn-card> <pn-card card-title="Elevated Card" subtitle="With shadow" variant="elevated" hoverable="true"> <p>This card has elevation and lifts on hover. Great for interactive elements.</p> <div slot="footer"> <pn-button label="Action" type="primary" rounded="true"></pn-button> </div> </pn-card> <pn-card card-title="Outlined Card" variant="outlined"> <p>A simple outlined variant. Clean and minimal design.</p> <div slot="footer"> <pn-badge text="New" type="success" variant="soft" rounded="true"></pn-badge> </div> </pn-card> <pn-card card-title="Compact Card" subtitle="Less padding" variant="elevated" compact="true"> <p>Compact variant with reduced padding for denser layouts.</p> </pn-card> </div> </div> <!-- ================================================== --> <!-- ACCORDION COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Accordion Component</h2> <div style="display: grid; gap: 2rem; max-width: 600px;"> <div> <h4>Single Expand (default)</h4> <pn-accordion id="acc-single" bordered="true"></pn-accordion> </div> <div> <h4>Multiple Expand</h4> <pn-accordion id="acc-multiple" bordered="true" multiple="true"></pn-accordion> </div> </div> </div> <script>
+      customElements.whenDefined('pn-accordion').then(function() {
+        document.getElementById('acc-single').items = [
+          { id: 'faq1', title: 'What is UI Foundation?', content: '<p>UI Foundation is a Stencil-powered web component library that provides accessible, themeable components for building modern interfaces.</p>' },
+          { id: 'faq2', title: 'How do I install it?', content: '<p>Install via npm: <code>npm install @parthi033/ui-foundation</code>. Then import the components in your project.</p>' },
+          { id: 'faq3', title: 'Is it framework-agnostic?', content: '<p>Yes! Built with Stencil, it outputs standard web components that work in React, Angular, Vue, or vanilla HTML.</p>' },
+          { id: 'faq4', title: 'Disabled section', content: '<p>This section cannot be opened.</p>', disabled: true },
+        ];
+        document.getElementById('acc-multiple').items = [
+          { id: 'feat1', title: 'Accessible by Default', content: '<p>All components follow WCAG 2.1 AA guidelines with proper ARIA attributes, keyboard navigation, and focus management.</p>' },
+          { id: 'feat2', title: 'Themeable with Design Tokens', content: '<p>Customize colors, typography, spacing, and more using CSS custom properties. Supports light and dark modes.</p>' },
+          { id: 'feat3', title: 'Lightweight & Performant', content: '<p>Stencil compiles to tiny, optimized web components with lazy loading and tree-shaking support.</p>' },
+        ];
+      });
+    </script> <!-- ================================================== --> <!-- TABS COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Tabs Component</h2> <div style="display: grid; gap: 2rem;"> <div> <h4>Default Tabs</h4> <pn-tabs id="tabs-default"> <div slot="overview"><p>Welcome to the overview panel. This is the first tab's content area.</p></div> <div slot="features"><p>Features include: accessibility, theming, keyboard navigation, and more!</p></div> <div slot="api"><p>Check the readme files for complete API documentation for each component.</p></div> </pn-tabs> </div> <div> <h4>Pills Variant</h4> <pn-tabs id="tabs-pills" variant="pills"> <div slot="all"><p>Showing all items in the list.</p></div> <div slot="active"><p>Showing only active items.</p></div> <div slot="archived"><p>Showing archived items.</p></div> </pn-tabs> </div> <div> <h4>Underline Variant — Full Width</h4> <pn-tabs id="tabs-underline" variant="underline" full-width="true"> <div slot="general"><p>General settings panel content.</p></div> <div slot="security"><p>Security and password configuration.</p></div> <div slot="notifications"><p>Notification preferences and channels.</p></div> </pn-tabs> </div> </div> </div> <script>
+      customElements.whenDefined('pn-tabs').then(function() {
+        document.getElementById('tabs-default').tabs = [
+          { id: 'overview', label: 'Overview', icon: 'fas fa-home' },
+          { id: 'features', label: 'Features', icon: 'fas fa-star' },
+          { id: 'api', label: 'API Docs', icon: 'fas fa-code' },
+        ];
+        document.getElementById('tabs-pills').tabs = [
+          { id: 'all', label: 'All' },
+          { id: 'active', label: 'Active' },
+          { id: 'archived', label: 'Archived' },
+        ];
+        document.getElementById('tabs-underline').tabs = [
+          { id: 'general', label: 'General', icon: 'fas fa-cog' },
+          { id: 'security', label: 'Security', icon: 'fas fa-shield-alt' },
+          { id: 'notifications', label: 'Notifications', icon: 'fas fa-bell' },
+        ];
+      });
+    </script> <!-- ================================================== --> <!-- BADGE COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Badge Component</h2> <div style="display: grid; gap: 1.5rem;"> <div> <h4>Solid Badges</h4> <div class="button-group"> <pn-badge text="Primary" type="primary"></pn-badge> <pn-badge text="Secondary" type="secondary"></pn-badge> <pn-badge text="Success" type="success"></pn-badge> <pn-badge text="Error" type="error"></pn-badge> <pn-badge text="Warning" type="warning"></pn-badge> <pn-badge text="Info" type="info"></pn-badge> <pn-badge text="Neutral" type="neutral"></pn-badge> </div> </div> <div> <h4>Soft Badges</h4> <div class="button-group"> <pn-badge text="Primary" type="primary" variant="soft"></pn-badge> <pn-badge text="Success" type="success" variant="soft"></pn-badge> <pn-badge text="Error" type="error" variant="soft"></pn-badge> <pn-badge text="Warning" type="warning" variant="soft"></pn-badge> <pn-badge text="Info" type="info" variant="soft"></pn-badge> </div> </div> <div> <h4>Outline Badges</h4> <div class="button-group"> <pn-badge text="Primary" type="primary" variant="outline"></pn-badge> <pn-badge text="Success" type="success" variant="outline"></pn-badge> <pn-badge text="Error" type="error" variant="outline"></pn-badge> <pn-badge text="Info" type="info" variant="outline"></pn-badge> </div> </div> <div> <h4>Rounded (Pill) &amp; With Dot</h4> <div class="button-group"> <pn-badge text="Active" type="success" variant="soft" rounded="true" dot="true"></pn-badge> <pn-badge text="Pending" type="warning" variant="soft" rounded="true" dot="true"></pn-badge> <pn-badge text="Offline" type="neutral" variant="soft" rounded="true" dot="true"></pn-badge> <pn-badge text="99+" type="error" rounded="true"></pn-badge> </div> </div> <div> <h4>Sizes</h4> <div class="button-group"> <pn-badge text="Small" type="primary" size="small"></pn-badge> <pn-badge text="Medium" type="primary" size="medium"></pn-badge> <pn-badge text="Large" type="primary" size="large"></pn-badge> </div> </div> </div> </div> <!-- ================================================== --> <!-- AVATAR COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Avatar Component</h2> <div style="display: grid; gap: 1.5rem;"> <div> <h4>Sizes</h4> <div class="button-group"> <pn-avatar name="XS" size="xsmall"></pn-avatar> <pn-avatar name="Small User" size="small"></pn-avatar> <pn-avatar name="John Doe" size="medium"></pn-avatar> <pn-avatar name="Jane Smith" size="large"></pn-avatar> <pn-avatar name="Alex Wilson" size="xlarge"></pn-avatar> </div> </div> <div> <h4>With Status</h4> <div class="button-group"> <pn-avatar name="Online User" size="large" status="online"></pn-avatar> <pn-avatar name="Busy User" size="large" status="busy"></pn-avatar> <pn-avatar name="Away User" size="large" status="away"></pn-avatar> <pn-avatar name="Offline User" size="large" status="offline"></pn-avatar> </div> </div> <div> <h4>Shapes &amp; Border</h4> <div class="button-group"> <pn-avatar name="Circle" size="large" shape="circle"></pn-avatar> <pn-avatar name="Square" size="large" shape="square"></pn-avatar> <pn-avatar name="Border" size="large" border="true" status="online"></pn-avatar> </div> </div> </div> </div> <!-- ================================================== --> <!-- BREADCRUMB COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Breadcrumb Component</h2> <div style="display: grid; gap: 1.5rem;"> <div> <h4>Basic Breadcrumb</h4> <pn-breadcrumb id="bc-basic"></pn-breadcrumb> </div> <div> <h4>With Icon &amp; Custom Separator</h4> <pn-breadcrumb id="bc-custom" separator="›"></pn-breadcrumb> </div> <div> <h4>Collapsed (max 3 items)</h4> <pn-breadcrumb id="bc-collapsed" max-items="3"></pn-breadcrumb> </div> </div> </div> <script>
+      customElements.whenDefined('pn-breadcrumb').then(function() {
+        document.getElementById('bc-basic').items = [
+          { label: 'Home', href: '/' },
+          { label: 'Products', href: '/products' },
+          { label: 'Components', href: '/products/components' },
+          { label: 'Button' },
+        ];
+        document.getElementById('bc-custom').items = [
+          { label: 'Home', href: '/', icon: 'fas fa-home' },
+          { label: 'Dashboard', href: '/dashboard' },
+          { label: 'Settings' },
+        ];
+        document.getElementById('bc-collapsed').items = [
+          { label: 'Home', href: '/' },
+          { label: 'Products', href: '/products' },
+          { label: 'Category', href: '/products/cat' },
+          { label: 'Subcategory', href: '/products/cat/sub' },
+          { label: 'Item Detail' },
+        ];
+      });
+    </script> <!-- ================================================== --> <!-- PAGINATION COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Pagination Component</h2> <div style="display: grid; gap: 2rem;"> <div> <h4>Default Pagination</h4> <pn-pagination current-page="5" total-pages="20"></pn-pagination> </div> <div> <h4>Small Pagination</h4> <pn-pagination current-page="1" total-pages="10" size="small"></pn-pagination> </div> <div> <h4>Large Pagination</h4> <pn-pagination current-page="3" total-pages="50" size="large"></pn-pagination> </div> <div> <h4>Compact Mode</h4> <pn-pagination current-page="7" total-pages="25" compact="true"></pn-pagination> </div> <div> <h4>Without First/Last Buttons</h4> <pn-pagination current-page="3" total-pages="15" show-first-last="false"></pn-pagination> </div> </div> </div> <!-- ================================================== --> <!-- SIDEBAR COMPONENT --> <!-- ================================================== --> <div class="section"> <h2>Sidebar Component</h2> <div style="display: flex; gap: 2rem;"> <div style="border: 1px solid var(--input-border, #e5e7eb); border-radius: 8px; overflow: hidden; height: 480px;"> <pn-sidebar id="demo-sidebar" header="Admin Panel" collapsible="true" active-item="dashboard"></pn-sidebar> </div> <div style="flex: 1; padding: 1rem;"> <p>Click items in the sidebar to navigate. Use the arrow at the top to collapse/expand the sidebar. Supports nested items, sections, dividers, badges, and keyboard navigation.</p> </div> </div> </div> <script>
+      customElements.whenDefined('pn-sidebar').then(function() {
+        document.getElementById('demo-sidebar').items = [
+          { id: 'dashboard', label: 'Dashboard', icon: 'fas fa-tachometer-alt', href: '#' },
+          { id: 'analytics', label: 'Analytics', icon: 'fas fa-chart-bar', href: '#', badge: 'New' },
+          { id: 'div1', label: '', divider: true },
+          { id: 'users', label: 'Users', icon: 'fas fa-users', section: 'Management', children: [
+            { id: 'user-list', label: 'All Users', href: '#' },
+            { id: 'user-add', label: 'Add User', href: '#' },
+            { id: 'user-roles', label: 'Roles & Permissions', href: '#' },
+          ]},
+          { id: 'products', label: 'Products', icon: 'fas fa-box', children: [
+            { id: 'product-list', label: 'All Products', href: '#', badge: '42' },
+            { id: 'product-add', label: 'Add Product', href: '#' },
+            { id: 'categories', label: 'Categories', href: '#' },
+          ]},
+          { id: 'orders', label: 'Orders', icon: 'fas fa-shopping-cart', href: '#', badge: '5' },
+          { id: 'div2', label: '', divider: true },
+          { id: 'settings', label: 'Settings', icon: 'fas fa-cog', href: '#', section: 'System' },
+          { id: 'help', label: 'Help', icon: 'fas fa-question-circle', href: '#' },
+          { id: 'disabled', label: 'Maintenance', icon: 'fas fa-wrench', disabled: true },
+        ];
+      });
+    </script> <!-- ================================================== --> <!-- COMPONENT LIBRARY SUMMARY --> <!-- ================================================== --> <div class="section"> <h2>Component Library Summary</h2> <p>UI Foundation includes <strong>23 components</strong>:</p> <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem 1rem;"> <div> <h4>Navigation</h4> <ul> <li>pn-header (8 variants)</li> <li>pn-link</li> <li>pn-breadcrumb</li> <li>pn-pagination</li> <li>pn-sidebar</li> <li>pn-tabs (3 variants)</li> </ul> </div> <div> <h4>Form Controls</h4> <ul> <li>pn-input</li> <li>pn-textarea</li> <li>pn-dropdown (typeahead)</li> <li>pn-checkbox</li> <li>pn-radio</li> <li>pn-toggle</li> <li>pn-form-field</li> </ul> </div> <div> <h4>Feedback</h4> <ul> <li>pn-button (6 types)</li> <li>pn-modal</li> <li>pn-toast</li> <li>pn-alert</li> <li>pn-tooltip</li> <li>pn-spinner</li> </ul> </div> <div> <h4>Content</h4> <ul> <li>pn-card (3 variants)</li> <li>pn-accordion</li> <li>pn-badge (7 types)</li> <li>pn-avatar</li> </ul> </div> </div> </div> </body></html>
