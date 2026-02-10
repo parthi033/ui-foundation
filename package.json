@@ -57,7 +57,7 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "deploy": "npm run build && sed -i '' 's|href=\"/|href=\"./|g;s|src=\"/|src=\"./|g;s|url(\"/|url(\"./|g;s|data-resources-url=\"/|data-resources-url=\"./|g' www/index.html && gh-pages -d www"
+    "deploy": "npm run build && sed -i '' 's|href=\"/|href=\"./|g;s|src=\"/|src=\"./|g;s|url(\"/|url(\"./|g;s|data-resources-url=\"/|data-resources-url=\"./|g;s|logo=\"/|logo=\"./|g' www/index.html && gh-pages -d www"
   },
   "devDependencies": {
     "@stencil/core": "^4.27.1",

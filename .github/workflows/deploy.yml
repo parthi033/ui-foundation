@@ -32,7 +32,7 @@ jobs:
       - run: npm run build
 
       - name: Fix paths for GitHub Pages
-        run: sed -i 's|href="/|href="./|g;s|src="/|src="./|g;s|url("/|url("./|g;s|data-resources-url="/|data-resources-url="./|g' www/index.html
+        run: sed -i 's|href="/|href="./|g;s|src="/|src="./|g;s|url("/|url("./|g;s|data-resources-url="/|data-resources-url="./|g;s|logo="/|logo="./|g' www/index.html
 
       - uses: actions/configure-pages@v4
 
